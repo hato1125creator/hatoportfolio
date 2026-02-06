@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | High School Developer</title>
+    
+    <!-- Google Fonts: 読みやすさとプロ感のためのフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome: アイコン用 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --bg-color: #F9FAFB; /* 目に優しいオフホワイト */
+            --text-main: #111827; /* 真っ黒ではない濃いグレー */
+            --text-sub: #6B7280;
+            --accent-color: #2563EB; /* 知的なブルー */
+            --card-bg: #FFFFFF;
+            --border-color: #E5E7EB;
+            --font-main: 'Inter', 'Noto Sans JP', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Layout Container (Mobile First) --- */
+        .container {
+            width: 90%;
+            max-width: 600px; /* PCで見てもスマホアプリのように中央に寄せる */
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        /* --- Animation Utilities --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 80vh; /* 画面の8割を占有 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            margin-bottom: 60px;
+        }
+
+        .hero-role {
+            font-size: 0.875rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .hero-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .hero-copy {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            margin-bottom: 32px;
+        }
+
+        .scroll-down {
+            margin-top: auto;
+            align-self: center;
+            color: var(--text-sub);
+            font-size: 1.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        /* --- Section Common Styles --- */
+        section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* --- Featured Works (Card Style) --- */
+        .work-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .work-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .work-image {
+            width: 100%;
+            height: 220px; /* 画像の高さを少し確保 */
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画像を枠いっぱいにトリミングして表示 */
+            transition: transform 0.5s ease;
+        }
+        
+        .work-card:hover .work-image img {
+            transform: scale(1.05); /* ホバー時に少し拡大 */
+        }
+
+        .work-content {
+            padding: 24px;
+        }
+
+        .work-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .work-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+        }
+
+        /* GAS Architecture Emphasis */
+        .tech-architecture {
+            background-color: #F3F4F6;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .arch-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .arch-flow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            flex-wrap: wrap;
+        }
+        
+        .arch-item {
+            background: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .fa-arrow-right {
+            color: var(--text-sub);
+            font-size: 0.8rem;
+        }
+
+        .work-stats {
+            display: flex;
+            gap: 16px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+
+        .stat-item {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* --- Tech Stack --- */
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tech-tag {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tech-tag i {
+            color: var(--accent-color);
+        }
+
+        /* --- About & Future --- */
+        .about-text {
+            font-size: 1rem;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+        }
+
+        .future-box {
+            background-color: #EFF6FF; /* 薄いブルー */
+            border-left: 4px solid var(--accent-color);
+            padding: 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .future-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+
+        /* --- Footer / Links --- */
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--text-main);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Hero Section -->
+        <header class="hero fade-in">
+            <span class="hero-role">High School Developer</span>
+            <h1 class="hero-name">Hayato Koshikawa</h1>
+            <p class="hero-copy">
+                文化祭の混雑を、<br>
+                Google Apps Scriptで解決しました。
+            </p>
+            <div class="scroll-down">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </header>
+
+        <!-- Works Section -->
+        <section id="works" class="fade-in">
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Featured Work</h2>
+            
+            <div class="work-card">
+                <!-- アプリの画像 (表示されやすいサムネイル形式に変更 + エラー時の予備画像を設定) -->
+                <div class="work-image">
+                    <img 
+                        src="https://drive.google.com/thumbnail?id=1p-XBflBYTLS4V9Bs3i6M1GF79hc0u8QW&sz=w1000" 
+                        alt="文化祭POSレジアプリのスクリーンショット"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x400?text=Image+Not+Found'; this.style.objectFit='contain';"
+                    >
+                </div>
+                
+                <div class="work-content">
+                    <h3 class="work-title">文化祭POSレジシステム</h3>
+                    <p class="work-desc">
+                        レジシステムを文化祭で使いやすいような機能とデザインにしたWebアプリ。生徒が使いやすい形にし、毎回起こっていた金額が合わない問題を解決。
+                    </p>
+
+                    <!-- 技術的なこだわりポイント -->
+                    <div class="tech-architecture">
+                        <div class="arch-title">System Architecture</div>
+                        <div class="arch-flow">
+                            <span class="arch-item"><i class="fa-brands fa-html5"></i> Web</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span class="arch-item"><i class="fa-brands fa-google"></i> GAS</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                            <span class="arch-item"><i class="fa-solid fa-table"></i> Sheets</span>
+                        </div>
+                    </div>
+
+                    <div class="work-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1,200+</span>
+                            Daily Users
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">0円</span>
+                            Cost
+                        </div>
+                    </div>
+
+                    <!-- アプリリンクボタンを追加 -->
+                    <div style="margin-top: 20px;">
+                        <a href="https://bunkasai-pos.vercel.app/" class="btn btn-secondary" target="_blank">
+                            <i class="fa-solid fa-up-right-from-square"></i> アプリを使ってみる
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="skills" class="fade-in">
+            <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Tech Stack</h2>
+            <div class="tech-list">
+                <div class="tech-tag"><i class="fa-brands fa-google"></i> Google Apps Script</div>
+                <div class="tech-tag"><i class="fa-solid fa-table"></i> Google Sheets API</div>
+                <div class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript (ES6)</div>
+                <div class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</div>
+                <div class="tech-tag"><i class="fa-brands fa-github"></i> GitHub</div>
+            </div>
+        </section>
+
+        <!-- About & Future Section -->
+        <section id="about" class="fade-in">
+            <h2 class="section-title"><i class="fa-solid fa-user"></i> About & Future</h2>
+            <p class="about-text">
+                「身近な課題を技術でハックする」がモットーです。限られたリソースの中で、スプレッドシートをDB化するなど、工夫を凝らした実装が得意です。
+            </p>
+            <div class="future-box">
+                <div class="future-title">Next Challenge</div>
+                <p>現在はFirebaseとReactを学習中。よりリアルタイム性の高いアプリケーション開発に挑戦しています。</p>
+            </div>
+        </section>
+
+        <!-- Contact Links -->
+        <section id="contact" class="fade-in">
+            <div class="contact-links">
+                <a href="https://github.com/hato1125creator" class="btn btn-primary" target="_blank">
+                    <i class="fa-brands fa-github"></i> GitHubを見る
+                </a>
+                <a href="https://www.instagram.com/k_ha.yato/" class="btn btn-secondary" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i> @k_ha.yato
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Hayato Koshikawa. Built with pure HTML/CSS.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // スクロール時にふわっと表示させるアニメーション
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 一度表示されたら監視を終了
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
