@@ -111,6 +111,7 @@ export default function PortfolioV3() {
           <p className={styles.questionLead}>仕組みを整え、説明を用意しても、情報を見ない人や、使い方が分からない人はいた。</p>
           <p>QR入場管理では説明動画を公開しても、当日にQRの表示方法が分からない来場者がいた。Web化しても、必要な情報に全員が到達するとは限らない。</p>
           <div className={styles.questions}><p><b>見つけられない</b><span>そもそも情報との接点がない。</span></p><p><b>理解できない</b><span>背景知識によって受け取り方が変わる。</span></p><p><b>行動しない</b><span>理解しても、参加や利用につながらない。</span></p></div>
+          <p className={styles.civicBridge}>さらに、八千代市の高校生魅力発信大使として行政の情報発信に関わる中で、この問題は学校の中だけではないのではないかと考えるようになった。学校で見つけた「届かない」という問いを、地域や行政でも確かめたい。</p>
         </div>
       </section>
 
@@ -118,6 +119,14 @@ export default function PortfolioV3() {
         <div className={styles.musashiHead}><p className={styles.kicker}>武蔵大学で探究したいこと</p><h2>学校で見つけた問いを、地域・行政へ。</h2></div>
         <div className={styles.researchQuestion}><span>研究したい問い</span><p>行政情報を普段見ない人にも必要な情報が届き、必要な背景を理解した上で、自分の意見を表明できる仕組みをどう設計できるか。</p></div>
         <div className={styles.researchSteps}><div><b>聞き取る</b><p>インタビューやフィールドワークで、どこで情報が止まるかを調べる。</p></div><div><b>確かめる</b><p>到達、閲覧、理解、意見提出までをデータで見る。</p></div><div><b>作って検証する</b><p>調査結果を情報サービスとして試作し、使われ方を確かめる。</p></div></div>
+        <div className={styles.seminarFocus}>
+          <span>具体的に深めたい学び</span>
+          <div>
+            <b>新井庭子ゼミ ─ 情報の可視化と調査</b>
+            <p>テキストマイニングやデータの可視化を通して、住民の意見や情報への接触状況を分析し、「誰に何が届いていないのか」を確かめ、その結果を情報設計へ戻す方法を学びたい。</p>
+            <a href="https://www.musashi.ac.jp/faculty/sociology/social_design/seminar_list.html" target="_blank" rel="noreferrer">2027年度 ゼミ一覧 ↗</a>
+          </div>
+        </div>
         <p className={styles.future}>卒業後は、民間企業の立場から、行政と住民をつなぐ情報サービスや情報基盤の設計・開発に携わりたい。</p>
         <a className={styles.musashiLink} href="https://www.musashi.ac.jp/faculty/sociology/social_design/curriculum.html" target="_blank" rel="noreferrer">情報社会デザイン専攻の学び ↗</a>
       </section>
