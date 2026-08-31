@@ -165,7 +165,7 @@ export default function PortfolioV3() {
         <div className={styles.creditsHead}><p className={styles.kicker}>制作体制・AI利用</p><h2>本人が判断し、AIを補助に使った。</h2></div>
         <div className={styles.creditGrid}>
           <div><b>越川颯人</b><p>課題発見、企画、要件決定、画面・運用設計、実装、関係者との調整、最終判断を担当。</p></div>
-          <div><b>AI支援</b><p>ChatGPT・Claude Codeを、コード案、エラー調査、要件と文章の整理に使用。出力は本人が確認・修正した。</p></div>
+          <div><b>AI支援</b><p>ChatGPT・Claude Codeを、要件整理、レイアウト・文章案、コードの生成・修正、エラー調査に使用。採用判断、事実確認、最終調整は本人が行った。</p></div>
           <div><b>共同運用・素材</b><p>受付や審査、安全管理は生徒会・実行委員・教員と共同で運用。特設サイトのモチーフイラストは別の生徒が制作した。</p></div>
         </div>
       </section>
