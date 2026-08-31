@@ -13,12 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "越川颯人 Portfolio",
+  title: "越川颯人 オンラインポートフォリオ",
   description:
     "情報が理解され、行動につながるところまで設計する。越川颯人の武蔵大学総合型選抜オンラインポートフォリオ。",
-  other: {
-    "codex-preview": "development",
-  },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
