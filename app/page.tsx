@@ -2,12 +2,12 @@ const works = [
   {
     id: "qr",
     number: "01",
-    label: "ENTRANCE SYSTEM",
+    label: "入場管理",
     title: "QR入場管理",
     statement: "紙中心の入場管理を再設計し、受付の長い列を減らす。",
-    tier: "MAIN CASE / 01",
+    tier: "代表作品 / 01",
     primary: true,
-    period: "2025.09 — 2026.07",
+    period: "2025.09 - 2026.07",
     role: "課題発見・企画・要件整理・UI設計・実装・DB設計・当日運用",
     metrics: ["1,422 招待", "1,043 実来場", "991 登録生徒"],
     challenge: "従来は、生徒が紙に招待者名を書き、実行委員が入力、生徒会が集計し、当日は紙チケットと名簿を照合していた。バス到着時には長い列ができ、7月の炎天下での待機や、部活動の発表時間に間に合わない来場者が例年発生していた。",
@@ -27,12 +27,12 @@ const works = [
   {
     id: "portal",
     number: "02",
-    label: "SUBMISSION WORKFLOW",
+    label: "提出管理",
     title: "梨花祭 統合管理ポータル",
     statement: "紙の提出を、状態と履歴が見える審査フローへ変える。",
-    tier: "MAIN CASE / 02",
+    tier: "代表作品 / 02",
     primary: true,
-    period: "2026.03 — 2026.07",
+    period: "2026.03 - 2026.07",
     role: "課題発見・企画・要件定義・実装・運用設計（AI支援）",
     metrics: ["54 団体", "5 書類", "約3.5か月運用"],
     challenge: "32クラスと22部活動が複数の書類を提出しており、回収、確認、差し戻し、再提出の管理に時間がかかった。紛失やPDF整理の負担もあり、提出者以外は企画内容や進捗を把握しにくかった。",
@@ -52,21 +52,21 @@ const works = [
   {
     id: "festival-site",
     number: "03",
-    label: "PUBLIC INFORMATION",
+    label: "情報発信",
     title: "梨花祭2026 特設Webサイト",
     statement: "紙では届かない情報を、探せて更新できるWebへ。",
-    tier: "SUPPORTING CASE / 03",
+    tier: "制作作品 / 03",
     primary: false,
     period: "2026.07 運用",
     role: "企画・デザイン・コーディング・公開・当日の情報更新",
-    metrics: ["本番 1,091 人", "TOP 17,294 表示", "MAP 857 表示"],
+    metrics: ["本番 1,091 人", "トップ 17,294 表示", "構内図 857 表示"],
     challenge: "従来の紙パンフレットは掲載できる情報量に限界があり、印刷作業にも約2日かかった。一度印刷すると企画の時間や価格が変わっても修正できず、来場者が多数の企画から目的の情報を探す方法も限られていた。",
     decision: "企画名検索、カテゴリー絞り込み、構内図、タイムライン、お知らせを実装し、当日も各企画の価格や実施時間を更新できるようにした。別の生徒が制作した『おとぎの国』のモチーフイラストをトップに置き、その色に合わせてサイト全体のカラーパレットを設計した。",
     reason: "紙をそのままWebへ移すのではなく、検索できること、変更をすぐ反映できること、会場内で必要な情報へ移動しやすいことなど、Webだからできる情報の届け方を追加した。",
     result: "Google Analyticsでは7月6〜19日にアクティブユーザー1,464人、トップページ17,294表示、マップ857表示を記録した。文化祭本番の7月17・18日には1,091人が利用した。",
     limitation: "Web化しても、必要な情報へ全員が到達するとは限らない。今後は、どの情報が見つけられていないのか、検索や導線のどこで離脱するのか、どのタイミングで何を示すと行動につながるのかを利用データと聞き取りから確かめたい。",
-    tech: "Next.js / TypeScript / Prisma / Vercel Analytics / Vercel",
-    techReason: "公開ページと更新機能をWeb上で扱い、当日の変更を反映しながら、Vercel Analyticsで利用状況を計測できる構成にした。",
+    tech: "Next.js / TypeScript / Prisma / Vercel",
+    techReason: "公開ページと更新機能をWeb上で扱い、当日の変更をすぐ反映できる構成にした。利用状況はGoogle Analyticsのデータで確認した。",
     flow: ["企画情報を整理", "検索・カテゴリー", "マップ・タイムライン", "当日情報を更新", "アクセスを計測"],
     images: [
       ["https://raw.githubusercontent.com/chiba-eiwa-seitokai/rikasai2026.site.tokusetu/main/public/hero.png", "別の生徒が制作したモチーフイラストを使用し、色設計を合わせた特設サイトのメインビジュアル", "トップ・世界観"],
@@ -76,12 +76,12 @@ const works = [
   {
     id: "discord",
     number: "04",
-    label: "INFORMATION INFRASTRUCTURE",
+    label: "情報共有",
     title: "生徒会 Discord情報基盤",
     statement: "連絡を流す場所から、判断を残せる場所へ。",
-    tier: "SUPPORTING CASE / 04",
+    tier: "制作作品 / 04",
     primary: false,
-    period: "2024.07 — 現在",
+    period: "2024.07 - 現在",
     role: "提案・移行設計・サーバー作成・運用",
     metrics: ["44 人", "2025.04 移行", "Botで日程通知"],
     challenge: "LINE中心の連絡では情報が流れ、年度ごとのメンバー変更や、行事ごとの整理、閲覧範囲の分離が難しかった。2024年7月にはSlackも提案したが、無料版では過去の履歴を長期間参照しにくかった。",
@@ -111,31 +111,31 @@ export default function Home() {
   return (
     <main id="top">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="ページ上部へ">HAYATO KOSHIKAWA</a>
+        <a className="brand" href="#top" aria-label="ページ上部へ">越川颯人</a>
         <nav aria-label="ページ内ナビゲーション">
-          <a href="#works">WORK</a>
-          <a href="#reflection">REFLECTION</a>
-          <a href="#future">WHY MUSASHI</a>
-          <a href="#credits">CREDITS</a>
+          <a href="#works">制作物</a>
+          <a href="#reflection">振り返り</a>
+          <a href="#future">武蔵大学での探究</a>
+          <a href="#credits">制作体制</a>
         </nav>
         <a className="presentation-link" href="/presentation">発表用表示 ↗</a>
       </header>
 
       <section className="hero section-shell">
         <div className="hero-copy">
-          <p className="mono-label">INFORMATION &amp; SOCIAL DESIGN / 2024—2026</p>
+          <p className="mono-label">情報設計・社会デザイン / 2024-2026</p>
           <h1>情報は、<br />置くだけでは<br /><span>届かない。</span></h1>
           <p className="hero-lead">情報が理解され、行動につながるところまで設計する。</p>
-          <p className="hero-profile">千葉英和高等学校 生徒会長<br />越川 颯人 / Hayato Koshikawa</p>
+          <p className="hero-profile">千葉英和高等学校 生徒会長<br />越川 颯人</p>
         </div>
         <div className="hero-symbol" aria-hidden="true">
           <span className="arc" /><span className="circle" /><span className="square" /><span className="dots" />
-          <b>INFORMATION<br />→ ACTION</b>
+          <b>情報<br />→ 行動</b>
         </div>
       </section>
 
       <section className="thesis section-shell" aria-labelledby="thesis-title">
-        <p className="section-kicker">THESIS</p>
+        <p className="section-kicker">制作の軸</p>
         <h2 id="thesis-title">仕組み・ルール・UI・運用を、<br />一つの情報経路として再設計した。</h2>
         <p>梨花祭と生徒会活動では、情報が存在していても、場所・形式・時期が分散することで、確認、提出、受付、判断が止まっていた。私はこの問題を人の注意不足ではなく、情報が行動へ移るまでの構造として捉えた。</p>
       </section>
@@ -149,7 +149,7 @@ export default function Home() {
 
       <section className="works section-shell" id="works">
         <div className="section-heading">
-          <div><p className="section-kicker">SELECTED WORKS</p><h2>問いから作った、<br />4つの仕組み。</h2></div>
+          <div><p className="section-kicker">制作物</p><h2>問いから作った、<br />4つの仕組み。</h2></div>
           <p>各作品は「課題 → 判断 → 実装・運用 → 結果 → 限界」の順で整理した。画像は実際の画面、当日の記録、制作に使用した素材を使用している。</p>
         </div>
 
@@ -161,11 +161,11 @@ export default function Home() {
                 <p className={`case-tier ${work.primary ? "case-tier-main" : ""}`}>{work.tier}</p>
                 <div className="work-title-row">
                   <div><h3>{work.title}</h3><p>{work.statement}</p></div>
-                  <dl><div><dt>PERIOD</dt><dd>{work.period}</dd></div><div><dt>MY ROLE</dt><dd>{work.role}</dd></div></dl>
+                  <dl><div><dt>制作・運用期間</dt><dd>{work.period}</dd></div><div><dt>担当</dt><dd>{work.role}</dd></div></dl>
                 </div>
                 <ul className="metric-list">{work.metrics.map((metric) => <li key={metric}>{metric}</li>)}</ul>
                 <div className="decision-brief">
-                  <span>KEY DECISION</span>
+                  <span>設計判断</span>
                   <p>{work.reason}</p>
                 </div>
                 <div className={`evidence evidence-${work.images.length}`}>
@@ -178,18 +178,18 @@ export default function Home() {
                 <details className="case-details" open={work.primary}>
                   <summary>設計判断と振り返りを見る <span>＋</span></summary>
                   <div className="case-grid">
-                    <section><small>CHALLENGE</small><h4>課題</h4><p>{work.challenge}</p></section>
-                    <section><small>DECISION</small><h4>設計判断</h4><p>{work.decision}</p></section>
-                    <section><small>OUTCOME</small><h4>結果</h4><p>{work.result}</p></section>
-                    <section className="limitation"><small>NEXT ITERATION</small><h4>限界と次の改善</h4><p>{work.limitation}</p></section>
+                    <section><small>01</small><h4>課題</h4><p>{work.challenge}</p></section>
+                    <section><small>02</small><h4>設計判断</h4><p>{work.decision}</p></section>
+                    <section><small>03</small><h4>結果</h4><p>{work.result}</p></section>
+                    <section className="limitation"><small>04</small><h4>限界と次の改善</h4><p>{work.limitation}</p></section>
                   </div>
                   <div className="system-flow" aria-label={`${work.title}の処理の流れ`}>
-                    <span>INFORMATION FLOW</span>
+                    <span>情報の流れ</span>
                     <ol>{work.flow.map((step, index) => <li key={step}><b>{String(index + 1).padStart(2, "0")}</b>{step}</li>)}</ol>
                   </div>
                   <div className="technology-block">
-                    <p className="tech-line"><span>TECHNOLOGY</span>{work.tech}</p>
-                    <p><span>WHY THIS STACK</span>{work.techReason}</p>
+                    <p className="tech-line"><span>使用技術</span>{work.tech}</p>
+                    <p><span>技術選定の理由</span>{work.techReason}</p>
                   </div>
                 </details>
               </div>
@@ -199,12 +199,12 @@ export default function Home() {
       </section>
 
       <section className="process section-shell">
-        <p className="section-kicker">PROCESS</p><h2>制作を、現場の改善サイクルにする。</h2>
+        <p className="section-kicker">制作プロセス</p><h2>制作を、現場の改善サイクルにする。</h2>
         <ol>{process.map(([n, title, text]) => <li key={n}><span>{n}</span><strong>{title}</strong><p>{text}</p></li>)}</ol>
       </section>
 
       <section className="reflection section-shell" id="reflection">
-        <div><p className="section-kicker">REFLECTION</p><h2>一元化しても、<br />見ない人は残った。</h2></div>
+        <div><p className="section-kicker">制作を通して残った問い</p><h2>一元化しても、<br />見ない人は残った。</h2></div>
         <div className="reflection-copy">
           <p className="reflection-lead">仕組みを整えても、情報を「見つける・理解する・行動する」は自動ではつながらなかった。</p>
           <p>高校では、受付、提出、情報発信、連絡で情報が止まっている場面を見つけ、情報を一か所に集めたり、操作を簡単にしたりする仕組みを作ってきた。しかし、説明を用意しても使い方が分からない人や、そもそも情報を見ない人は残った。</p>
@@ -214,19 +214,19 @@ export default function Home() {
       </section>
 
       <section className="future section-shell" id="future">
-        <div className="future-title"><p className="section-kicker">WHY MUSASHI UNIVERSITY</p><h2>情報を「作る」から、<br />人との関係を調べて設計するへ。</h2></div>
-        <div className="research-question"><span>RESEARCH QUESTION</span><strong>行政情報を普段見ない人にも必要な情報が届き、必要な背景を理解した上で、自分の意見を表明できる仕組みをどう設計できるか。</strong></div>
+        <div className="future-title"><p className="section-kicker">武蔵大学で探究したいこと</p><h2>情報を「作る」から、<br />人との関係を調べて設計するへ。</h2></div>
+        <div className="research-question"><span>研究したい問い</span><strong>行政情報を普段見ない人にも必要な情報が届き、必要な背景を理解した上で、自分の意見を表明できる仕組みをどう設計できるか。</strong></div>
         <div className="research-methods">
           <article><span>01</span><h3>聞き取る</h3><p>インタビュー、フィールドワーク、アンケートを通して、人が行政情報をどこから得て、どこで理解につまずくのかを調べる。</p></article>
           <article><span>02</span><h3>データで確かめる</h3><p>情報の到達、閲覧、理解、意見提出までのデータを集め、これまで行政情報を見ていなかった人が参加できたかを検証する。</p></article>
           <article><span>03</span><h3>設計して検証する</h3><p>生活との関係が分かる入口、難しい制度の説明、原文への導線、賛否双方の論点、簡単な意見提出を試作し、調査結果から作り直す。</p></article>
         </div>
-        <div className="research-question"><span>AFTER GRADUATION</span><strong>卒業後は、民間企業の立場から、行政と住民をつなぐ情報サービスや情報基盤の設計・開発に携わりたい。</strong></div>
+        <div className="research-question"><span>卒業後</span><strong>卒業後は、民間企業の立場から、行政と住民をつなぐ情報サービスや情報基盤の設計・開発に携わりたい。</strong></div>
         <a className="official-link" href="https://www.musashi.ac.jp/faculty/sociology/social_design/curriculum.html" target="_blank" rel="noreferrer">情報社会デザイン専攻の学び ↗</a>
       </section>
 
       <section className="credits section-shell" id="credits">
-        <div><p className="section-kicker">CREDITS / AI DISCLOSURE</p><h2>誰が、どこを担ったか。</h2></div>
+        <div><p className="section-kicker">制作体制・AI利用</p><h2>誰が、どこを担ったか。</h2></div>
         <div className="credit-grid">
           <article><span>越川颯人</span><p>課題発見、企画、要件決定、画面・運用設計、実装、関係者との調整、最終判断。</p></article>
           <article><span>AI支援</span><p>ChatGPT・Claude Codeを、コード案、エラー調査、要件と文章の整理に使用。出力は本人が確認・修正した。</p></article>
@@ -242,24 +242,24 @@ export default function Home() {
       </section>
 
       <section className="sources section-shell" aria-labelledby="sources-title">
-        <div><p className="section-kicker">SOURCES / INFLUENCES</p><h2 id="sources-title">制作を確認できる資料。</h2></div>
+        <div><p className="section-kicker">関連資料・参考</p><h2 id="sources-title">制作を確認できる資料。</h2></div>
         <div className="source-list">
-          <a href="https://github.com/chiba-eiwa-seitokai/rikasai-reservation" target="_blank" rel="noreferrer"><span>CODE</span><strong>QR入場管理 GitHub</strong><b>↗</b></a>
-          <a href="https://rikasai2026-site-tokusetu.vercel.app/" target="_blank" rel="noreferrer"><span>LIVE SITE</span><strong>梨花祭2026 特設Webサイト</strong><b>↗</b></a>
-          <a href="https://github.com/chiba-eiwa-seitokai/rikasai2026.site.tokusetu" target="_blank" rel="noreferrer"><span>CODE</span><strong>梨花祭2026 特設Webサイト GitHub</strong><b>↗</b></a>
-          <a href="https://www.musashi.ac.jp/faculty/sociology/social_design/curriculum.html" target="_blank" rel="noreferrer"><span>ACADEMIC</span><strong>武蔵大学 情報社会デザイン専攻</strong><b>↗</b></a>
-          <div className="influence-note"><span>VISUAL REFERENCES</span><p><a href="https://lea-lea.site/" target="_blank" rel="noreferrer">lea-lea.site</a> / <a href="https://hoshimachi-suisei.jp/" target="_blank" rel="noreferrer">hoshimachi-suisei.jp</a> / <a href="https://ashimfactory.com/" target="_blank" rel="noreferrer">ashimfactory.com</a> / <a href="https://katsura35.com/" target="_blank" rel="noreferrer">katsura35.com</a> を、余白、文字の強弱、作品の見せ方の参考にした。構成と内容は本ポートフォリオ用に再設計している。</p></div>
+          <a href="https://github.com/chiba-eiwa-seitokai/rikasai-reservation" target="_blank" rel="noreferrer"><span>ソースコード</span><strong>QR入場管理 GitHub</strong><b>↗</b></a>
+          <a href="https://rikasai2026-site-tokusetu.vercel.app/" target="_blank" rel="noreferrer"><span>公開サイト</span><strong>梨花祭2026 特設Webサイト</strong><b>↗</b></a>
+          <a href="https://github.com/chiba-eiwa-seitokai/rikasai2026.site.tokusetu" target="_blank" rel="noreferrer"><span>ソースコード</span><strong>梨花祭2026 特設Webサイト GitHub</strong><b>↗</b></a>
+          <a href="https://www.musashi.ac.jp/faculty/sociology/social_design/curriculum.html" target="_blank" rel="noreferrer"><span>大学情報</span><strong>武蔵大学 情報社会デザイン専攻</strong><b>↗</b></a>
+          <div className="influence-note"><span>デザイン参考</span><p><a href="https://lea-lea.site/" target="_blank" rel="noreferrer">lea-lea.site</a> / <a href="https://hoshimachi-suisei.jp/" target="_blank" rel="noreferrer">hoshimachi-suisei.jp</a> / <a href="https://ashimfactory.com/" target="_blank" rel="noreferrer">ashimfactory.com</a> / <a href="https://katsura35.com/" target="_blank" rel="noreferrer">katsura35.com</a> を、余白、文字の強弱、作品の見せ方の参考にした。構成と内容は本ポートフォリオ用に再設計している。</p></div>
         </div>
       </section>
 
       <section className="presentation-cta section-shell">
-        <div><p className="section-kicker">FOR INTERVIEW</p><h2>このサイトを使って、<br />制作意図を説明する。</h2></div>
+        <div><p className="section-kicker">面接に向けて</p><h2>このサイトを使って、<br />制作意図を説明する。</h2></div>
         <p>発表用表示では、中心テーマ、主要作品、限界、大学での問いだけを順番に表示する。</p>
         <a href="/presentation">発表用表示を開く <span>↗</span></a>
       </section>
 
       <footer className="site-footer section-shell">
-        <strong>HAYATO KOSHIKAWA</strong><span>Information &amp; Social Design Portfolio / 2026</span><a href="#top">BACK TO TOP ↑</a>
+        <strong>越川颯人</strong><span>オンラインポートフォリオ / 2026</span><a href="#top">ページ上部へ ↑</a>
       </footer>
     </main>
   );
