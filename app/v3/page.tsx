@@ -1,4 +1,5 @@
 import styles from "./v3.module.css";
+import "./final.css";
 
 export default function PortfolioV3() {
   return (
@@ -54,8 +55,8 @@ export default function PortfolioV3() {
           <div><span>実来場</span><strong>1,043</strong><small>人</small></div>
           <div><span>登録生徒</span><strong>991</strong><small>人</small></div>
         </div>
-        <p className={styles.resultLine}><b>結果：</b>本番では大きなシステム障害なく運用でき、例年見られた長い受付列はほぼ見られなくなった。実来場者数も記録として残せるようになった。</p>
-        <p className={styles.issueLine}><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない来場者がいた。また、379件の未使用招待について理由を区別できていない。</p>
+        <p className="v3-result-line"><b>結果：</b>本番では大きなシステム障害なく運用でき、例年見られた長い受付列はほぼ見られなくなった。実来場者数も記録として残せるようになった。</p>
+        <p className="v3-issue-line"><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない来場者がいた。また、379件の未使用招待について理由を区別できていない。</p>
         <p className={styles.metaLine}>制作・運用：2025.09–2026.07　／　担当：課題発見・企画・要件整理・UI設計・実装・DB設計・当日運用</p>
         <p className={styles.metaLine}>技術：HTML / CSS / JavaScript / Node.js / Express / PostgreSQL（Supabase） / Vercel</p>
 
@@ -87,8 +88,8 @@ export default function PortfolioV3() {
             <h3>梨花祭 統合管理ポータル</h3>
             <p>32クラスと22部活動から集まる書類を、提出・確認・差し戻し・再提出まで一つの場所で追えるようにした。</p>
             <p className={styles.workData}>54団体 / 5種類の書類 / 約3.5か月運用</p>
-            <p className={styles.workResult}>未提出団体を一覧で把握し、催促文の作成や差し戻し・再提出の確認を同じ流れで行えるようにした。</p>
-            <p className={styles.workIssue}><b>残った課題：</b>説明PDFや動画を用意しても、提出方法やファイル添付で迷う利用者がいた。案内を増やすだけでなく、画面自体をさらに単純にする必要がある。</p>
+            <p className="v3-work-result">未提出団体を一覧で把握し、催促文の作成や差し戻し・再提出の確認を同じ流れで行えるようにした。</p>
+            <p className="v3-work-issue"><b>残った課題：</b>説明PDFや動画を用意しても、提出方法やファイル添付で迷う利用者がいた。案内を増やすだけでなく、画面自体をさらに単純にする必要がある。</p>
             <p className={styles.workTech}>Google Apps Script / Google スプレッドシート / Google Drive</p>
           </div>
           <div className={styles.portalFlow}>
@@ -108,7 +109,7 @@ export default function PortfolioV3() {
             <h3>梨花祭2026 特設Webサイト</h3>
             <p>検索、カテゴリー絞り込み、構内図、タイムライン、当日の情報更新をWebで実現した。</p>
             <p className={styles.workData}>本番（7/17–18）1,091人 / トップ（7/6–19）17,294表示 / 構内図（7/6–19）857表示</p>
-            <p className={styles.workIssue}><b>残った課題：</b>Web化しても、必要な情報に全員が到達したとは限らない。検索や導線のどこで離脱するのかを、利用データと聞き取りから確かめたい。</p>
+            <p className="v3-work-issue"><b>残った課題：</b>Web化しても、必要な情報に全員が到達したとは限らない。検索や導線のどこで離脱するのかを、利用データと聞き取りから確かめたい。</p>
             <p className={styles.workTech}>Next.js / TypeScript / Prisma / Vercel</p>
             <p className={styles.note}>「おとぎの国」のモチーフイラストは別の生徒が制作。Web上の配置とカラーパレット設計を担当した。</p>
             <a href="https://rikasai2026-site-tokusetu.vercel.app/" target="_blank" rel="noreferrer">実際のサイトを見る ↗</a>
@@ -121,8 +122,8 @@ export default function PortfolioV3() {
             <h3>生徒会 Discord情報基盤</h3>
             <p>LINEでは流れてしまう連絡を、行事、タスク、資料、権限ごとに整理し、後から検索できる情報へ変えた。</p>
             <p>既存サービスを課題に合わせて選び直し、44人で継続運用できる形を作った。</p>
-            <p className={styles.workResult}>過去の連絡を検索し、行事ごとに資料・担当・相談を整理できるようになった。</p>
-            <p className={styles.workIssue}><b>残った課題：</b>分類を増やすほど投稿先が分かりにくくなる。チャンネル整理と次年度への引き継ぎを継続して改善する必要がある。</p>
+            <p className="v3-work-result">過去の連絡を検索し、行事ごとに資料・担当・相談を整理できるようになった。</p>
+            <p className="v3-work-issue"><b>残った課題：</b>分類を増やすほど投稿先が分かりにくくなる。チャンネル整理と次年度への引き継ぎを継続して改善する必要がある。</p>
             <p className={styles.workTech}>Discord / 権限設計 / Bot運用</p>
           </div>
           <div className={styles.discordVisuals}>
