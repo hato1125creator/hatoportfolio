@@ -44,32 +44,33 @@ export default function PortfolioV3() {
         <div className={styles.storyGrid}>
           <figure className={styles.storyImage}><img src="/evidence/qr-reception-field.jpg" alt="文化祭当日の受付の様子" /></figure>
           <div className={styles.storyText}>
-            <p>高校2年生で一度提案した招待コード方式は、個人情報、安全性、誰でも使えるかという懸念から実現しなかった。</p>
-            <p>3年生で、学校メールによる生徒認証と、生徒が招待者を登録する方式へ再設計。招待者はリンクからQRを表示でき、スマートフォンを持たない人には印刷対応も残した。</p>
-            <p className={styles.quote}>便利さよりも、学校が責任を持って運用でき、来場者が迷わず使えることを優先した。</p>
+            <p>従来は、生徒が招待者名を紙で提出し、学校が集約して紙の招待券を配布。当日は招待券と名簿を照合していた。バス到着時などに受付が混み、7月の暑さに加えて、部活動の発表に間に合わない来場者もいた。</p>
+            <p>高校2年生の2025年3月ごろから動く試作版を作り、招待コード方式を提案したが、個人情報、不正利用・安全性、スマートフォンを使えない人への対応に加え、教員への事前調整・合意形成が不足しており、本番導入には至らなかった。</p>
+            <p>3年生では、受付改善の必要性を説明して理解を得ながら、学校メールへの認証コード送信による本人確認、生徒が招待者名を登録して固有リンクを発行する方式、印刷対応、招待枠の譲渡機能などへ再設計した。</p>
+            <p className={styles.quote}>必要性を共有し、指摘されたデメリットを仕様と運用で一つずつ減らして、学校で使える形にした。</p>
           </div>
         </div>
 
         <div className={styles.metrics}>
-          <div><span>招待</span><strong>1,422</strong><small>件</small></div>
-          <div><span>実来場</span><strong>1,043</strong><small>人</small></div>
-          <div><span>登録生徒</span><strong>991</strong><small>人</small></div>
+          <div><span>招待者登録</span><strong>1,422</strong><small>件</small></div>
+          <div><span>一般招待QR入場</span><strong>1,043</strong><small>人</small></div>
+          <div><span>登録生徒</span><strong>991</strong><small>人 / 対象1,119人</small></div>
         </div>
-        <p className="v3-result-line"><b>結果：</b>本番では大きなシステム障害なく運用でき、例年見られた長い受付列はほぼ見られなくなった。実来場者数も記録として残せるようになった。</p>
-        <p className="v3-issue-line"><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない来場者がいた。また、379件の未使用招待について理由を区別できていない。</p>
-        <p className={styles.metaLine}>制作・運用：2025.09–2026.07　／　担当：課題発見・企画・要件整理・UI設計・実装・DB設計・当日運用</p>
-        <p className={styles.metaLine}>技術：HTML / CSS / JavaScript / Node.js / Express / PostgreSQL（Supabase） / Vercel</p>
+        <p className="v3-result-line"><b>結果：</b>受付開始前には開始を待つ列ができたが、受付を始めると流れ、前年のような長い受付待ちの列はほぼ発生しなかった。本番中にシステム停止による紙受付への切り替えはなく、一般招待QRで1,043人の入場を記録した。</p>
+        <p className="v3-issue-line"><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない人やQRを読み取れない人はいた。また、最終的に招待者名が登録されていた1,422件のうち379件は入場記録がなく、その理由までは区別できていない。</p>
+        <p className={styles.metaLine}>制作・運用：2025.03–2026.07　／　担当：課題発見・企画・教員との調整・要件決定・UI設計・AIを用いた実装・DB設計・実証テスト・当日運用</p>
+        <p className={styles.metaLine}>技術：HTML / CSS / JavaScript / Node.js / Express / PostgreSQL（Supabase） / html5-qrcode / Nodemailer（Gmail SMTP） / Vercel</p>
 
         <div className={styles.qrUi}>
           <div className={styles.qrUiText}>
             <h3>画面と運用を、同時に作った。</h3>
-            <p>登録、招待、QR提示、当日受付、集計を一つにつなげ、複数端末から同じ記録を扱えるようにした。</p>
+            <p>生徒は学校メールに届く認証コードで本人確認し、招待者名を登録して固有リンクを発行。リンクは生徒自身がLINEなどで送り、来場者が開くとQRが表示される。受付は学校のChromebookを複数台使い、同じデータベースへ即時に入場記録を反映した。</p>
             <ol>
-              <li><b>01</b>学校メールで認証</li>
-              <li><b>02</b>招待者を登録</li>
-              <li><b>03</b>招待リンク・QR発行</li>
-              <li><b>04</b>複数端末で受付</li>
-              <li><b>05</b>入場記録・集計</li>
+              <li><b>01</b>学校メール＋認証コードで本人確認</li>
+              <li><b>02</b>招待者名を登録・必要なら招待枠を譲渡</li>
+              <li><b>03</b>固有リンク・QRを発行</li>
+              <li><b>04</b>複数端末で受付・例外時は管理画面で照合</li>
+              <li><b>05</b>入場記録・時間帯別集計</li>
             </ol>
           </div>
           <div className={styles.qrUiImages}>
@@ -86,9 +87,9 @@ export default function PortfolioV3() {
           <div className={styles.workCopy}>
             <span>提出管理</span>
             <h3>梨花祭 統合管理ポータル</h3>
-            <p>32クラスと22部活動から集まる書類を、提出・確認・差し戻し・再提出まで一つの場所で追えるようにした。</p>
-            <p className={styles.workData}>54団体 / 5種類の書類 / 約3.5か月運用</p>
-            <p className="v3-work-result">未提出団体を一覧で把握し、催促文の作成や差し戻し・再提出の確認を同じ流れで行えるようにした。</p>
+            <p>32クラスと22部活動を対象に、書類の提出・確認・差し戻し・再提出を一つの場所で追えるようにした。1団体が別団体と合併したため、実運用上の提出単位は53団体となった。</p>
+            <p className={styles.workData}>対象54団体（実運用53団体） / 5種類の書類 / 約3.5か月運用</p>
+            <p className="v3-work-result">実運用上の53団体すべてが少なくとも1回はポータル経由で提出した。5種類の書類のうち企画書は全団体必須とし、提出ファイルはGoogle Driveへ自動保存。未提出団体の把握、催促文の作成、差し戻し・再提出の確認を同じ流れで行えるようにした。</p>
             <p className="v3-work-issue"><b>残った課題：</b>説明PDFや動画を用意しても、提出方法やファイル添付で迷う利用者がいた。案内を増やすだけでなく、画面自体をさらに単純にする必要がある。</p>
             <p className={styles.workTech}>Google Apps Script / Google スプレッドシート / Google Drive</p>
           </div>
@@ -107,11 +108,11 @@ export default function PortfolioV3() {
           <div className={styles.workCopy}>
             <span>情報発信</span>
             <h3>梨花祭2026 特設Webサイト</h3>
-            <p>検索、カテゴリー絞り込み、構内図、タイムライン、当日の情報更新をWebで実現した。</p>
-            <p className={styles.workData}>本番（7/17–18）1,091人 / トップ（7/6–19）17,294表示 / 構内図（7/6–19）857表示</p>
+            <p>検索、カテゴリー絞り込み、構内図、タイムライン、お知らせ、当日の情報更新をWebで実現した。必要な機能とカラーパレットは自分で決めた。</p>
+            <p className={styles.workData}>本番（7/17–18）GA4アクティブユーザー1,091人 / トップ（7/6–19）17,294表示 / 構内図（7/6–19）857表示</p>
             <p className="v3-work-issue"><b>残った課題：</b>Web化しても、必要な情報に全員が到達したとは限らない。検索や導線のどこで離脱するのかを、利用データと聞き取りから確かめたい。</p>
-            <p className={styles.workTech}>Next.js / TypeScript / Prisma / Vercel</p>
-            <p className={styles.note}>「おとぎの国」のモチーフイラストは別の生徒が制作。Web上の配置とカラーパレット設計を担当した。</p>
+            <p className={styles.workTech}>Next.js / TypeScript / Prisma / PostgreSQL（Supabase） / Vercel / Vercel Analytics / Google Analytics 4 / Google Tag Manager</p>
+            <p className={styles.note}>「おとぎの国」のモチーフイラストは別の生徒が制作。構成案はCodexで検討し、トップページのみChatGPT Image 2で複数の完成デザイン案を生成して、本人が選択・修正指示した。実装時は実際の写真・素材へ差し替え、トップ以外は完成デザイン画像を生成せずコード上で調整した。</p>
             <a href="https://rikasai2026-site-tokusetu.vercel.app/" target="_blank" rel="noreferrer">実際のサイトを見る ↗</a>
           </div>
         </article>
@@ -120,11 +121,11 @@ export default function PortfolioV3() {
           <div className={styles.workCopy}>
             <span>情報共有</span>
             <h3>生徒会 Discord情報基盤</h3>
-            <p>LINEでは流れてしまう連絡を、行事、タスク、資料、権限ごとに整理し、後から検索できる情報へ変えた。</p>
-            <p>既存サービスを課題に合わせて選び直し、44人で継続運用できる形を作った。</p>
-            <p className="v3-work-result">過去の連絡を検索し、行事ごとに資料・担当・相談を整理できるようになった。</p>
+            <p>LINEでは流れてしまう連絡を、行事、タスク、資料、権限ごとに整理し、後から検索できる情報へ変えた。Slackも検討したが、無料プランの履歴制限などを踏まえてDiscordを選んだ。</p>
+            <p>2024年7月ごろから情報共有の改善を始め、2025年4月にDiscordへ移行。生徒会メンバーと運営ボランティアを合わせた44人で継続運用した。</p>
+            <p className="v3-work-result">過去の連絡を検索し、行事ごとに資料・担当・相談を整理できるようになった。権限ごとに閲覧範囲を分けたことで、生徒会以外の運営ボランティアも必要な範囲だけ参加できるようにした。</p>
             <p className="v3-work-issue"><b>残った課題：</b>分類を増やすほど投稿先が分かりにくくなる。チャンネル整理と次年度への引き継ぎを継続して改善する必要がある。</p>
-            <p className={styles.workTech}>Discord / 権限設計 / Bot運用</p>
+            <p className={styles.workTech}>Discord / 権限設計 / Bot運用（活動日程・予定通知）</p>
           </div>
           <div className={styles.discordVisuals}>
             <figure className={styles.discordMain}><img src="/evidence/discord-channel-structure.png" alt="Discordのチャンネル構成" /><figcaption>チャンネル構成</figcaption></figure>
@@ -137,11 +138,11 @@ export default function PortfolioV3() {
         <div><p className={styles.kicker}>制作を通して残った問い</p><h2>それでも、<br />見ない人は残った。</h2></div>
         <div className={styles.questionBody}>
           <p className={styles.questionLead}>仕組みを整え、説明を用意しても、情報を見ない人や、使い方が分からない人はいた。</p>
-          <p>QR入場管理では説明動画を公開しても、当日にQRの表示方法が分からない来場者がいた。Web化しても、必要な情報に全員が到達するとは限らない。</p>
+          <p>QR入場管理では説明動画を公開しても、当日にQRの表示方法が分からない来場者がいた。Web化しても、必要な情報に全員が到達するとは限らない。そこで、自分の経験から「届かない」状態を仮に3段階に整理した。</p>
           <div className={styles.questions}>
             <p><b>見つけられない</b><span>そもそも情報との接点がない。</span></p>
             <p><b>理解できない</b><span>背景知識によって受け取り方が変わる。</span></p>
-            <p><b>行動しない</b><span>理解しても、参加や利用につながらない。</span></p>
+            <p><b>行動につながらない</b><span>理解しても、参加や利用につながらない。</span></p>
           </div>
           <p>さらに、八千代市の高校生魅力発信大使として行政の情報発信に関わる中で、この問題は学校の中だけではないのではないかと考えるようになった。学校で見つけた「届かない」という問いを、地域や行政でも確かめたい。</p>
         </div>
@@ -162,16 +163,16 @@ export default function PortfolioV3() {
       </section>
 
       <section className={styles.credits} id="credits">
-        <div className={styles.creditsHead}><p className={styles.kicker}>制作体制・AI利用</p><h2>本人が判断し、AIを補助に使った。</h2></div>
+        <div className={styles.creditsHead}><p className={styles.kicker}>制作体制・AI利用</p><h2>AIを使った部分も、本人が判断した部分も明記する。</h2></div>
         <div className={styles.creditGrid}>
-          <div><b>越川颯人</b><p>課題発見、企画、要件決定、画面・運用設計、実装、関係者との調整、最終判断を担当。</p></div>
-          <div><b>AI支援</b><p>ChatGPT・Claude Codeを、要件整理、サイト構成、完成デザインの生成、文章案、コードの生成・修正、エラー調査に使用。AIが生成した構成・デザインを含め、採用判断、事実確認、修正、最終調整は本人が行った。</p></div>
-          <div><b>共同運用・素材</b><p>受付や審査、安全管理は生徒会・実行委員・教員と共同で運用。特設サイトのモチーフイラストは別の生徒が制作した。</p></div>
+          <div><b>今回のポートフォリオ</b><p>文章・構成・デザイン方針は本人が主導。ChatGPTを内容整理・文章確認・レイアウト検討に、Codexを主にコード生成・修正に使用した。最終文章、事実確認、採用判断、調整は本人が行った。</p></div>
+          <div><b>各制作物でのAI支援</b><p>QR入場管理はChatGPT・Claude Codeをコード生成・修正などに使用。提出ポータルはGeminiで構成案を作り、ChatGPT・Claude Codeを実装に使用。特設WebサイトはCodexで構成案を検討し、ChatGPT Image 2でトップページの完成デザイン案を生成した。Discordでも生成AIを補助に使用した。</p></div>
+          <div><b>共同運用・素材</b><p>QR入場管理のセキュリティや学校運用に関わる仕様は、顧問・関係教員と話し合いながら決定。受付や安全管理は生徒会・実行委員・教員と共同で運用した。特設Webサイトのモチーフイラストは別の生徒が制作した。</p></div>
         </div>
       </section>
 
       <footer className={styles.footer}>
-        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026</span></div>
+        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作：2026年8月上旬〜9月2日</span></div>
         <div><a href="#top">ページ上部へ ↑</a></div>
       </footer>
     </main>
