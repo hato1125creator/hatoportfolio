@@ -53,65 +53,72 @@ export default function PortfolioV3() {
 
         <div className="qr-flow-editorial">
           <div className="qr-flow-head">
-            <p>実際の画面遷移</p>
-            <h3>生徒から来場者、受付へ。<br />情報が届く流れを一つにした。</h3>
-            <p>画面を作るだけでなく、「誰が、次に何をするか」が迷わずつながるように、招待・提示・受付・集計を設計した。</p>
+            <p>実際の利用の流れ</p>
+            <h3>画面ではなく、<br />人の行動単位で設計した。</h3>
+            <p>「生徒が招待する」「来場者に届く」「受付する」「運営が把握する」の4場面で、画面遷移と設計意図を追えるようにした。</p>
           </div>
 
-          <article className="qr-flow-stage qr-flow-stage-auth">
+          <article className="qr-flow-stage">
             <div className="qr-flow-copy">
-              <span>生徒</span>
-              <h4>まず、生徒本人から。</h4>
-              <p>学校メールに認証コードを送り、在校生本人であることを確認してから招待機能を使えるようにした。</p>
-              <div className="qr-flow-point"><b>ここがポイント</b><p>2年時に指摘された不正利用への懸念を、学校が管理するメールアドレスを入口にすることで減らした。</p></div>
+              <span>01 / 生徒</span>
+              <h4>本人確認から、招待リンク発行まで。</h4>
+              <p>学校メールへ認証コードを送り、在校生本人だけが利用できるようにした。その後、生徒が招待者名を入力し、相手ごとの固有リンクを発行する。</p>
+              <div className="qr-flow-point"><b>ここがポイント</b><p>学校が管理するメールアドレスを入口にして、2年時に指摘された不正利用への懸念を減らした。</p></div>
+              <div className="qr-before-after"><span>以前</span><p>紙の招待券を受け取り、相手に渡す</p><i>→</i><span>変更後</span><p>Webで招待を作り、リンクを送る</p></div>
             </div>
-            <figure className="qr-flow-screen qr-flow-screen-auth"><img src="/evidence/qr-flow-auth.webp" alt="学校メールで認証コードを送る生徒ログイン画面" /><figcaption>学校メール＋認証コードで本人確認</figcaption></figure>
+            <div className="qr-flow-visual-pair">
+              <figure className="qr-flow-screen"><img src="/evidence/qr-student-dashboard-login.webp" alt="学校メール認証の生徒ログイン画面" /><figcaption>学校メール＋認証コードで本人確認</figcaption></figure>
+              <figure className="qr-flow-screen"><img src="/evidence/qr-flow-invite.webp" alt="招待者名を入力してリンクを発行する画面" /><figcaption>招待者名を登録して固有リンクを発行</figcaption></figure>
+            </div>
           </article>
 
-          <article className="qr-flow-stage qr-flow-stage-send">
-            <div className="qr-flow-send-visual">
-              <figure className="qr-flow-screen"><img src="/evidence/qr-flow-invite.webp" alt="招待者名を入力して招待リンクを作成する生徒画面" /><figcaption>生徒が招待者名を登録し、固有リンクを発行</figcaption></figure>
-              <div className="qr-flow-arrow" aria-hidden="true">→</div>
-              <figure className="qr-flow-screen qr-flow-ticket"><img src="/evidence/qr-flow-ticket-safe.webp" alt="来場者側に表示される入場QR画面" /><figcaption>来場者は届いたリンクを開くだけでQRを表示</figcaption></figure>
-            </div>
+          <article className="qr-flow-stage qr-flow-stage-reverse">
+            <figure className="qr-flow-screen qr-flow-ticket"><img src="/evidence/qr-flow-ticket-safe.webp" alt="来場者側に表示される入場QR画面" /><figcaption>来場者は届いたリンクを開くだけでQRを表示</figcaption></figure>
             <div className="qr-flow-copy">
-              <span>生徒 → 来場者</span>
-              <h4>紙を渡す代わりに、リンクを送る。</h4>
-              <p>生徒が招待者名を登録し、発行された固有リンクをLINEなどで送る。来場者側では氏名やメールアドレスを入力せず、リンクを開くだけで入場QRが表示される。</p>
+              <span>02 / 来場者</span>
+              <h4>入力させず、届いたリンクを開くだけ。</h4>
+              <p>招待者の情報は生徒側で登録するため、来場者は氏名やメールアドレスを入力しない。LINEなどで届いたリンクを開くと、その人の入場QRが表示される。</p>
               <div className="qr-flow-point"><b>ここがポイント</b><p>当日の通信混雑も想定し、チケット画像を事前保存できるようにした。受付時には画面を明るくする操作も用意した。</p></div>
+              <div className="qr-before-after"><span>以前</span><p>紙の招待券を持参する</p><i>→</i><span>変更後</span><p>届いたリンクからQRを提示する</p></div>
               <p className="qr-flow-security-note">※掲載画像のQR部分は公開用に無効化している。</p>
             </div>
           </article>
 
-          <article className="qr-flow-stage qr-flow-stage-reception">
+          <article className="qr-flow-stage">
             <div className="qr-flow-copy">
-              <span>受付スタッフ</span>
+              <span>03 / 受付スタッフ</span>
               <h4>読む。確認する。記録する。</h4>
-              <p>学校のChromebookを複数台使い、来場者が提示したQRを読み取ると入場記録を同じデータベースへ即時反映するようにした。</p>
-              <div className="qr-flow-point"><b>ここがポイント</b><p>同じQRが再度提示された場合は「入場済み」と判定する。QRが読み取れない場合は、招待した生徒の名前から管理画面で検索・照合する例外手順も事前に用意した。</p></div>
+              <p>学校のChromebookを複数台使い、来場者のQRを読み取ると入場記録を同じデータベースへ即時反映する。</p>
+              <div className="qr-flow-point"><b>ここがポイント</b><p>同じQRの再提示は「入場済み」と判定。QRが読めない場合は、招待した生徒の名前から検索・照合する手順も事前に用意した。</p></div>
+              <div className="qr-before-after"><span>以前</span><p>紙の名簿から名前を探して照合</p><i>→</i><span>変更後</span><p>QRで照合と入場記録を同時に行う</p></div>
             </div>
-            <div className="qr-flow-reception-visual">
-              <figure className="qr-flow-screen"><img src="/evidence/qr-admin-dashboard.jpg" alt="QR入場管理の管理画面" /><figcaption>例外時の照合にも使う管理画面</figcaption></figure>
-              <p>正常系だけではなく、<br /><b>「読めなかったとき」まで運用に入れた。</b></p>
+            <div className="qr-flow-visual-pair qr-flow-visual-reception">
+              <figure className="qr-flow-screen"><img src="/evidence/qr-reception-field.jpg" alt="梨花祭当日のQR受付" /><figcaption>学校のChromebookを複数台使って受付</figcaption></figure>
+              <figure className="qr-flow-screen"><img src="/evidence/qr-admin-dashboard.jpg" alt="QR受付の管理画面" /><figcaption>例外時は管理画面から検索・照合</figcaption></figure>
             </div>
           </article>
 
-          <article className="qr-flow-stage qr-flow-stage-ops">
-            <div className="qr-flow-ops-number"><strong>1つのDB</strong><span>複数端末から即時反映</span></div>
+          <article className="qr-flow-stage qr-flow-stage-reverse qr-flow-stage-ops">
+            <div className="qr-flow-ops-panel">
+              <strong>1つのDB</strong>
+              <span>複数端末から即時反映</span>
+              <p>受付の記録をそのまま運営情報にする。</p>
+            </div>
             <div className="qr-flow-copy">
-              <span>学校・運営</span>
+              <span>04 / 学校・運営</span>
               <h4>受付を、集計にもつなげた。</h4>
-              <p>受付で記録したデータから、現在の入場状況や時間帯別の人数、招待者ごとの状態を確認できるようにした。受付と集計を別作業にしなかった。</p>
+              <p>入場処理を別途集計し直すのではなく、受付時の記録から現在の入場状況や時間帯別の人数、招待者ごとの状態を確認できるようにした。</p>
+              <div className="qr-flow-point"><b>誰の何を解決したか</b><p>受付状況をその場で把握しにくかった運営側が、同じデータベースから入場状況を確認できるようになった。</p></div>
             </div>
           </article>
         </div>
 
         <div className="qr-impact">
-          <div className="qr-impact-head"><span>結果として</span><h3>誰の、何を変えたか。</h3></div>
-          <div className="qr-impact-row"><b>来場者</b><p><span>以前</span>紙の招待券と名簿照合で受付を待つ</p><i>→</i><p><span>変更後</span>届いたリンクからQRを表示して提示</p></div>
-          <div className="qr-impact-row"><b>生徒</b><p><span>以前</span>紙の招待券を受け取り、相手に渡す</p><i>→</i><p><span>変更後</span>招待者名を登録し、固有リンクを送る</p></div>
-          <div className="qr-impact-row"><b>受付スタッフ</b><p><span>以前</span>紙の名簿から招待者を探して照合</p><i>→</i><p><span>変更後</span>QRで照合と入場記録、例外時のみ検索</p></div>
-          <div className="qr-impact-row"><b>学校・運営</b><p><span>以前</span>入場状況をその場で把握しにくい</p><i>→</i><p><span>変更後</span>同じDBから人数や時間帯別状況を確認</p></div>
+          <div className="qr-impact-head"><span>結果として</span><h3>4者の行動を、一つの流れにした。</h3></div>
+          <div className="qr-impact-row"><b>来場者</b><p><span>困っていたこと</span>受付で長く待ち、見たい発表に間に合わないことがあった</p><i>→</i><p><span>変えたこと</span>QRを提示する受付へ。受付開始後は前年のような長い待機列がほぼ発生しなかった</p></div>
+          <div className="qr-impact-row"><b>生徒</b><p><span>困っていたこと</span>紙の招待券を受け取り、相手に直接渡す必要があった</p><i>→</i><p><span>変えたこと</span>招待者名を登録し、LINEなどで固有リンクを送れるようにした</p></div>
+          <div className="qr-impact-row"><b>受付スタッフ</b><p><span>困っていたこと</span>紙の名簿から招待者を探して照合していた</p><i>→</i><p><span>変えたこと</span>QRで照合と入場記録を行い、例外時だけ検索・手動確認する流れにした</p></div>
+          <div className="qr-impact-row"><b>学校・運営</b><p><span>困っていたこと</span>入場状況をその場で把握しにくかった</p><i>→</i><p><span>変えたこと</span>複数端末の記録を同じDBへ集め、人数や時間帯別状況を確認できるようにした</p></div>
         </div>
 
         <div className={styles.metrics}>
@@ -217,7 +224,7 @@ export default function PortfolioV3() {
       </section>
 
       <footer className={styles.footer}>
-        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作：2026年8月上旬〜9月2日</span></div>
+        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作：2026年8月上旬〜9月4日</span></div>
         <div><a href="#top">ページ上部へ ↑</a></div>
       </footer>
     </main>
