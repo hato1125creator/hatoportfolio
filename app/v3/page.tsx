@@ -51,6 +51,69 @@ export default function PortfolioV3() {
           </div>
         </div>
 
+        <div className="qr-flow-editorial">
+          <div className="qr-flow-head">
+            <p>実際の画面遷移</p>
+            <h3>生徒から来場者、受付へ。<br />情報が届く流れを一つにした。</h3>
+            <p>画面を作るだけでなく、「誰が、次に何をするか」が迷わずつながるように、招待・提示・受付・集計を設計した。</p>
+          </div>
+
+          <article className="qr-flow-stage qr-flow-stage-auth">
+            <div className="qr-flow-copy">
+              <span>生徒</span>
+              <h4>まず、生徒本人から。</h4>
+              <p>学校メールに認証コードを送り、在校生本人であることを確認してから招待機能を使えるようにした。</p>
+              <div className="qr-flow-point"><b>ここがポイント</b><p>2年時に指摘された不正利用への懸念を、学校が管理するメールアドレスを入口にすることで減らした。</p></div>
+            </div>
+            <figure className="qr-flow-screen qr-flow-screen-auth"><img src="/evidence/qr-flow-auth.webp" alt="学校メールで認証コードを送る生徒ログイン画面" /><figcaption>学校メール＋認証コードで本人確認</figcaption></figure>
+          </article>
+
+          <article className="qr-flow-stage qr-flow-stage-send">
+            <div className="qr-flow-send-visual">
+              <figure className="qr-flow-screen"><img src="/evidence/qr-flow-invite.webp" alt="招待者名を入力して招待リンクを作成する生徒画面" /><figcaption>生徒が招待者名を登録し、固有リンクを発行</figcaption></figure>
+              <div className="qr-flow-arrow" aria-hidden="true">→</div>
+              <figure className="qr-flow-screen qr-flow-ticket"><img src="/evidence/qr-flow-ticket-safe.webp" alt="来場者側に表示される入場QR画面" /><figcaption>来場者は届いたリンクを開くだけでQRを表示</figcaption></figure>
+            </div>
+            <div className="qr-flow-copy">
+              <span>生徒 → 来場者</span>
+              <h4>紙を渡す代わりに、リンクを送る。</h4>
+              <p>生徒が招待者名を登録し、発行された固有リンクをLINEなどで送る。来場者側では氏名やメールアドレスを入力せず、リンクを開くだけで入場QRが表示される。</p>
+              <div className="qr-flow-point"><b>ここがポイント</b><p>当日の通信混雑も想定し、チケット画像を事前保存できるようにした。受付時には画面を明るくする操作も用意した。</p></div>
+              <p className="qr-flow-security-note">※掲載画像のQR部分は公開用に無効化している。</p>
+            </div>
+          </article>
+
+          <article className="qr-flow-stage qr-flow-stage-reception">
+            <div className="qr-flow-copy">
+              <span>受付スタッフ</span>
+              <h4>読む。確認する。記録する。</h4>
+              <p>学校のChromebookを複数台使い、来場者が提示したQRを読み取ると入場記録を同じデータベースへ即時反映するようにした。</p>
+              <div className="qr-flow-point"><b>ここがポイント</b><p>同じQRが再度提示された場合は「入場済み」と判定する。QRが読み取れない場合は、招待した生徒の名前から管理画面で検索・照合する例外手順も事前に用意した。</p></div>
+            </div>
+            <div className="qr-flow-reception-visual">
+              <figure className="qr-flow-screen"><img src="/evidence/qr-admin-dashboard.jpg" alt="QR入場管理の管理画面" /><figcaption>例外時の照合にも使う管理画面</figcaption></figure>
+              <p>正常系だけではなく、<br /><b>「読めなかったとき」まで運用に入れた。</b></p>
+            </div>
+          </article>
+
+          <article className="qr-flow-stage qr-flow-stage-ops">
+            <div className="qr-flow-ops-number"><strong>1つのDB</strong><span>複数端末から即時反映</span></div>
+            <div className="qr-flow-copy">
+              <span>学校・運営</span>
+              <h4>受付を、集計にもつなげた。</h4>
+              <p>受付で記録したデータから、現在の入場状況や時間帯別の人数、招待者ごとの状態を確認できるようにした。受付と集計を別作業にしなかった。</p>
+            </div>
+          </article>
+        </div>
+
+        <div className="qr-impact">
+          <div className="qr-impact-head"><span>結果として</span><h3>誰の、何を変えたか。</h3></div>
+          <div className="qr-impact-row"><b>来場者</b><p><span>以前</span>紙の招待券と名簿照合で受付を待つ</p><i>→</i><p><span>変更後</span>届いたリンクからQRを表示して提示</p></div>
+          <div className="qr-impact-row"><b>生徒</b><p><span>以前</span>紙の招待券を受け取り、相手に渡す</p><i>→</i><p><span>変更後</span>招待者名を登録し、固有リンクを送る</p></div>
+          <div className="qr-impact-row"><b>受付スタッフ</b><p><span>以前</span>紙の名簿から招待者を探して照合</p><i>→</i><p><span>変更後</span>QRで照合と入場記録、例外時のみ検索</p></div>
+          <div className="qr-impact-row"><b>学校・運営</b><p><span>以前</span>入場状況をその場で把握しにくい</p><i>→</i><p><span>変更後</span>同じDBから人数や時間帯別状況を確認</p></div>
+        </div>
+
         <div className={styles.metrics}>
           <div><span>招待者登録</span><strong>1,422</strong><small>件</small></div>
           <div><span>一般招待QR入場</span><strong>1,043</strong><small>人</small></div>
@@ -60,24 +123,6 @@ export default function PortfolioV3() {
         <p className="v3-issue-line"><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない人やQRを読み取れない人はいた。また、最終的に招待者名が登録されていた1,422件のうち379件は入場記録がなく、その理由までは区別できていない。</p>
         <p className={styles.metaLine}>制作・運用：2025.03–2026.07　／　担当：課題発見・企画・教員との調整・要件決定・UI設計・AIを用いた実装・DB設計・実証テスト・当日運用</p>
         <p className={styles.metaLine}>技術：HTML / CSS / JavaScript / Node.js / Express / PostgreSQL（Supabase） / html5-qrcode / Nodemailer（Gmail SMTP） / Vercel</p>
-
-        <div className={styles.qrUi}>
-          <div className={styles.qrUiText}>
-            <h3>画面と運用を、同時に作った。</h3>
-            <p>生徒は学校メールに届く認証コードで本人確認し、招待者名を登録して固有リンクを発行。リンクは生徒自身がLINEなどで送り、来場者が開くとQRが表示される。受付は学校のChromebookを複数台使い、同じデータベースへ即時に入場記録を反映した。</p>
-            <ol>
-              <li><b>01</b>学校メール＋認証コードで本人確認</li>
-              <li><b>02</b>招待者名を登録・必要なら招待枠を譲渡</li>
-              <li><b>03</b>固有リンク・QRを発行</li>
-              <li><b>04</b>複数端末で受付・例外時は管理画面で照合</li>
-              <li><b>05</b>入場記録・時間帯別集計</li>
-            </ol>
-          </div>
-          <div className={styles.qrUiImages}>
-            <figure className={styles.phoneShot}><img src="/evidence/qr-student-dashboard-login.webp" alt="学校メール認証画面" /></figure>
-            <figure className={styles.dashboardShot}><img src="/evidence/qr-admin-dashboard.jpg" alt="入場数を確認する管理画面" /></figure>
-          </div>
-        </div>
       </section>
 
       <section className={styles.works} id="works">
