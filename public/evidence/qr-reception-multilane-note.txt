@@ -1,1 +1,0 @@
-multi-lane reception photo replacement prepared from user-provided photo; binary asset added via Git data API.
