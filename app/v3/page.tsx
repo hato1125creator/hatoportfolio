@@ -89,11 +89,17 @@ export default function PortfolioV3() {
               <p>学校のChromebookを複数台使い、来場者のQRを読み取ると入場記録を同じデータベースへ即時反映する。</p>
               <div className="qr-flow-point"><b>ここがポイント</b><p>同じQRの再提示は「入場済み」と判定。QRが読めない場合は、招待した生徒の名前から検索・照合する手順も事前に用意した。</p></div>
             </div>
-            <figure className="qr-flow-screen qr-flow-field"><img src="/evidence/qr-reception-field.jpg" alt="梨花祭当日のQR受付" /><figcaption>学校のChromebookを複数台使ってQR受付</figcaption></figure>
+            <div className="qr-flow-reception-grid">
+              <figure className="qr-flow-screen qr-flow-field"><img src="/evidence/qr-field-scan.webp" alt="来場者のスマートフォンを受付カメラにかざしている様子" /><figcaption>来場者のQRを実際の受付カメラで読み取る</figcaption></figure>
+              <figure className="qr-flow-screen qr-flow-scan-panel"><img src="/evidence/qr-flow-scan.webp" alt="QRコードを読み取る受付画面" /><figcaption>受付画面には読み取り手順とトラブル時の対応も表示</figcaption></figure>
+            </div>
           </article>
 
           <article className="qr-flow-stage qr-flow-stage-reverse qr-flow-stage-ops">
-            <figure className="qr-flow-screen qr-flow-dashboard"><img src="/evidence/qr-admin-dashboard.jpg" alt="入場状況や時間帯別集計を確認する管理ダッシュボード" /><figcaption>受付記録を、そのまま入場状況・時間帯別の集計へ</figcaption></figure>
+            <div className="qr-flow-ops-visual">
+              <figure className="qr-flow-screen"><img src="/evidence/qr-ops-time.webp" alt="入場状況分布と時間帯別入場者数のグラフ" /><figcaption>入場状況と時間帯別の動きを可視化</figcaption></figure>
+              <figure className="qr-flow-screen"><img src="/evidence/qr-ops-class.webp" alt="クラス別の招待・入場状況を示すグラフ" /><figcaption>クラス単位でも招待・入場状況を確認</figcaption></figure>
+            </div>
             <div className="qr-flow-copy">
               <span>04 / 学校・運営</span>
               <h4>受付を、集計にもつなげた。</h4>
