@@ -64,7 +64,6 @@ export default function PortfolioV3() {
               <h4>本人確認から、招待リンク発行まで。</h4>
               <p>学校メールへ認証コードを送り、在校生本人だけが利用できるようにした。その後、生徒が招待者名を入力し、相手ごとの固有リンクを発行する。</p>
               <div className="qr-flow-point"><b>ここがポイント</b><p>学校が管理するメールアドレスを入口にして、2年時に指摘された不正利用への懸念を減らした。</p></div>
-              <div className="qr-before-after"><span>以前</span><p>紙の招待券を受け取り、相手に渡す</p><i>→</i><span>変更後</span><p>Webで招待を作り、リンクを送る</p></div>
             </div>
             <div className="qr-flow-visual-pair">
               <figure className="qr-flow-screen"><img src="/evidence/qr-student-dashboard-login.webp" alt="学校メール認証の生徒ログイン画面" /><figcaption>学校メール＋認証コードで本人確認</figcaption></figure>
@@ -79,7 +78,6 @@ export default function PortfolioV3() {
               <h4>入力させず、届いたリンクを開くだけ。</h4>
               <p>招待者の情報は生徒側で登録するため、来場者は氏名やメールアドレスを入力しない。LINEなどで届いたリンクを開くと、その人の入場QRが表示される。</p>
               <div className="qr-flow-point"><b>ここがポイント</b><p>当日の通信混雑も想定し、チケット画像を事前保存できるようにした。受付時には画面を明るくする操作も用意した。</p></div>
-              <div className="qr-before-after"><span>以前</span><p>紙の招待券を持参する</p><i>→</i><span>変更後</span><p>届いたリンクからQRを提示する</p></div>
               <p className="qr-flow-security-note">※掲載画像のQR部分は公開用に無効化している。</p>
             </div>
           </article>
@@ -90,20 +88,12 @@ export default function PortfolioV3() {
               <h4>読む。確認する。記録する。</h4>
               <p>学校のChromebookを複数台使い、来場者のQRを読み取ると入場記録を同じデータベースへ即時反映する。</p>
               <div className="qr-flow-point"><b>ここがポイント</b><p>同じQRの再提示は「入場済み」と判定。QRが読めない場合は、招待した生徒の名前から検索・照合する手順も事前に用意した。</p></div>
-              <div className="qr-before-after"><span>以前</span><p>紙の名簿から名前を探して照合</p><i>→</i><span>変更後</span><p>QRで照合と入場記録を同時に行う</p></div>
             </div>
-            <div className="qr-flow-visual-pair qr-flow-visual-reception">
-              <figure className="qr-flow-screen"><img src="/evidence/qr-reception-field.jpg" alt="梨花祭当日のQR受付" /><figcaption>学校のChromebookを複数台使って受付</figcaption></figure>
-              <figure className="qr-flow-screen"><img src="/evidence/qr-admin-dashboard.jpg" alt="QR受付の管理画面" /><figcaption>例外時は管理画面から検索・照合</figcaption></figure>
-            </div>
+            <figure className="qr-flow-screen qr-flow-field"><img src="/evidence/qr-reception-field.jpg" alt="梨花祭当日のQR受付" /><figcaption>学校のChromebookを複数台使ってQR受付</figcaption></figure>
           </article>
 
           <article className="qr-flow-stage qr-flow-stage-reverse qr-flow-stage-ops">
-            <div className="qr-flow-ops-panel">
-              <strong>1つのDB</strong>
-              <span>複数端末から即時反映</span>
-              <p>受付の記録をそのまま運営情報にする。</p>
-            </div>
+            <figure className="qr-flow-screen qr-flow-dashboard"><img src="/evidence/qr-admin-dashboard.jpg" alt="入場状況や時間帯別集計を確認する管理ダッシュボード" /><figcaption>受付記録を、そのまま入場状況・時間帯別の集計へ</figcaption></figure>
             <div className="qr-flow-copy">
               <span>04 / 学校・運営</span>
               <h4>受付を、集計にもつなげた。</h4>
