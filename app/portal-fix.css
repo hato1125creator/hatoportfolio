@@ -1,14 +1,14 @@
-/* V3 portal case study. Scoped to CSS-module class name fragments so it can style the current V3 markup without changing the component structure. */
+/* V3 portal case study. Scoped to the portal article so nested CSS-module classes such as portalFlow and portalAdmin do not receive article-level pseudo-elements. */
 [class*="__works"] > [class*="__sectionTitle"] h2 {
   font-size: clamp(40px, 4.2vw, 58px);
 }
 
-[class*="__portal"] {
+article[class*="__portal"] {
   position: relative;
   row-gap: 38px;
 }
 
-[class*="__portal"] [class*="__workCopy"] h3::after {
+article[class*="__portal"] [class*="__workCopy"] h3::after {
   content: "53団体の提出を、一つの流れで追えるようにした。";
   display: block;
   max-width: 520px;
@@ -21,7 +21,7 @@
   color: #315d96;
 }
 
-[class*="__portal"] .v3-work-result {
+article[class*="__portal"] .v3-work-result {
   margin-top: 24px !important;
   padding: 18px 20px 20px;
   border-top: 1px solid #17233a;
@@ -31,7 +31,7 @@
   line-height: 1.85 !important;
 }
 
-[class*="__portal"] .v3-work-result::before {
+article[class*="__portal"] .v3-work-result::before {
   content: "ここがポイント";
   display: block;
   margin-bottom: 8px;
@@ -122,7 +122,7 @@
   transform: translateY(-10px);
 }
 
-[class*="__portal"]::after {
+article[class*="__portal"]::after {
   content: "誰の何を変えたか\A\A提出者　　5種類の書類を一つのポータルから提出できるようにした\A文化祭運営　53団体の未提出・差し戻し・再提出を同じ管理画面で追えるようにした";
   grid-column: 1 / -1;
   display: block;
@@ -137,12 +137,12 @@
 
 @media (max-width: 980px) {
   [class*="__portalFlow"] figure:not(:last-child)::after { right: -13px; }
-  [class*="__portal"]::after { margin-top: 2px; }
+  article[class*="__portal"]::after { margin-top: 2px; }
 }
 
 @media (max-width: 620px) {
   [class*="__works"] > [class*="__sectionTitle"] h2 { font-size: 36px; }
-  [class*="__portal"] [class*="__workCopy"] h3::after { font-size: 13px; }
+  article[class*="__portal"] [class*="__workCopy"] h3::after { font-size: 13px; }
   [class*="__portalFlow"] { padding-top: 36px; }
   [class*="__portalFlow"] figure { margin-bottom: 8px; }
   [class*="__portalFlow"] figure:not(:last-child)::after {
@@ -155,7 +155,7 @@
   }
   [class*="__portalFlow"] [class*="__portalAdmin"] { transform: none; }
   [class*="__portalFlow"] figcaption { min-height: 0; }
-  [class*="__portal"]::after {
+  article[class*="__portal"]::after {
     font-size: 12px;
     line-height: 1.8;
     padding-top: 18px;
