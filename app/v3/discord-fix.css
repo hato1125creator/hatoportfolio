@@ -67,9 +67,7 @@
 
 [class*="__discordVisuals"]::marker { content: ""; }
 
-[class*="__discordVisuals"] > figure,
-[class*="__discordVisuals"]::before,
-[class*="__discordVisuals"]::after {
+[class*="__discordVisuals"] > figure {
   min-width: 0;
   margin: 0;
   border: 1px solid #d8d3c8;
@@ -118,53 +116,10 @@
 [class*="__discordVisuals"] > figure:nth-child(1) figcaption::after { content: "行事・用途ごとにチャンネルを分け、情報の置き場所を決めた"; }
 [class*="__discordVisuals"] > figure:nth-child(2) figcaption::before { content: "02 / 残す"; }
 [class*="__discordVisuals"] > figure:nth-child(2) figcaption::after { content: "案件ごとに相談・資料をフォーラムへ残し、後から探せるようにした"; }
-
-[class*="__discordVisuals"]::before,
-[class*="__discordVisuals"]::after {
-  box-sizing: border-box;
-  display: block;
-  padding: 262px 13px 13px;
-  white-space: pre-line;
-  font-size: 11px;
-  line-height: 1.6;
-  color: #17233a;
-  background-repeat: no-repeat;
-  background-position: center top;
-}
-
-[class*="__discordVisuals"]::before {
-  content: "03 / 知らせる\A 活動日Botが、当日の予定と開始時刻を自動通知";
-  background-image: url('/evidence/discord-bot-proof.webp');
-  background-size: auto 248px;
-  background-color: #f5f6f8;
-}
-
-[class*="__discordVisuals"]::after {
-  content: "04 / 分ける\A 管理者・執行部・運営ロールを付与し、役割ごとに閲覧範囲を分けた";
-  background-image: url('/evidence/discord-role-proof.webp');
-  background-size: auto 248px;
-  background-color: #f5f6f8;
-}
-
-[class*="__discordVisuals"]::selection { background: transparent; }
-
-[class*="__discordVisuals"]::before,
-[class*="__discordVisuals"]::after {
-  border-bottom: 3px solid #17233a;
-}
-
-[class*="__discordVisuals"]::before {
-  border-bottom-color: #315d96;
-}
-
-[class*="__discordVisuals"]::after {
-  border-bottom-color: #c13d76;
-}
-
-[class*="__discordVisuals"]::first-line {
-  font-weight: 700;
-  color: #315d96;
-}
+[class*="__discordVisuals"] > figure:nth-child(3) figcaption::before { content: "03 / 知らせる"; }
+[class*="__discordVisuals"] > figure:nth-child(3) figcaption::after { content: "活動日Botが、当日の予定と開始時刻を自動通知"; }
+[class*="__discordVisuals"] > figure:nth-child(4) figcaption::before { content: "04 / 分ける"; }
+[class*="__discordVisuals"] > figure:nth-child(4) figcaption::after { content: "管理者・執行部・運営ロールを付与し、役割ごとに閲覧範囲を分けた"; }
 
 [class*="__discord"] > [class*="__workCopy"]::after {
   content: "誰の何を変えたか\A \A 生徒会メンバー　過去の連絡や資料を後から検索しやすくした\A 運営ボランティア　必要な範囲だけ参加できるようにした";
@@ -187,7 +142,5 @@
   [class*="__discord"] > [class*="__workCopy"] h3::after { font-size: 13px; }
   [class*="__discordVisuals"] { grid-template-columns: 1fr !important; padding-top: 34px !important; }
   [class*="__discordVisuals"] > figure img { height: auto !important; max-height: 390px; }
-  [class*="__discordVisuals"]::before,
-  [class*="__discordVisuals"]::after { padding-top: 250px; background-size: auto 236px; }
   [class*="__discord"] > [class*="__workCopy"]::after { font-size: 12px; line-height: 1.8; }
 }
