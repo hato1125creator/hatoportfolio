@@ -42,7 +42,7 @@ export default function PortfolioV3() {
         </div>
 
         <div className={styles.storyGrid}>
-          <figure className={styles.storyImage}><img src="/evidence/qr-reception-field.jpg" alt="文化祭当日の受付の様子" /></figure>
+          <figure className={styles.storyImage}><img src="/evidence/qr-reception-overview.webp" alt="文化祭当日の招待者受付の様子" /></figure>
           <div className={styles.storyText}>
             <p>従来は、生徒が招待者名を紙で提出し、学校が集約して紙の招待券を配布。当日は招待券と名簿を照合していた。バス到着時などに受付が混み、7月の暑さに加えて、部活動の発表に間に合わない来場者もいた。</p>
             <p>高校2年生の2025年3月ごろから動く試作版を作り、招待コード方式を提案したが、個人情報、不正利用・安全性、スマートフォンを使えない人への対応に加え、教員への事前調整・合意形成が不足しており、本番導入には至らなかった。</p>
