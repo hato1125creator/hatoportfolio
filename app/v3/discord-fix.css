@@ -1,0 +1,192 @@
+/* Discord case study — show information architecture, forum, Bot, and roles as four concrete proofs. */
+[class*="__discord"] {
+  grid-template-columns: .40fr .60fr;
+  gap: 54px;
+  align-items: start;
+}
+
+[class*="__discord"] > [class*="__workCopy"] h3::after {
+  content: "流れる連絡を、後から使える情報に変えた。";
+  display: block;
+  max-width: 520px;
+  margin-top: 13px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0;
+  color: #315d96;
+}
+
+[class*="__discord"] > [class*="__workCopy"] > p:nth-of-type(2) {
+  margin: 24px 0 0 !important;
+  padding: 18px 0 19px;
+  border-top: 1px solid #17233a;
+  border-bottom: 1px solid #d8d3c8;
+  font-size: 0 !important;
+}
+
+[class*="__discord"] > [class*="__workCopy"] > p:nth-of-type(2)::before {
+  content: "44人\A 生徒会メンバー＋運営ボランティアで継続運用\A 2024年7月ごろ改善開始 → 2025年4月Discordへ移行";
+  display: block;
+  white-space: pre-line;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #17233a;
+}
+
+[class*="__discord"] > [class*="__workCopy"] .v3-work-result {
+  margin-top: 22px !important;
+  padding: 17px 18px 18px;
+  background: rgba(255,255,255,.42);
+  border-left: 2px solid #315d96;
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+}
+
+[class*="__discord"] > [class*="__workCopy"] .v3-work-result::before {
+  content: "結果";
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #315d96;
+}
+
+[class*="__discordVisuals"] {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+  padding: 42px 0 0 !important;
+  background: transparent !important;
+}
+
+[class*="__discordVisuals"]::marker { content: ""; }
+
+[class*="__discordVisuals"] > figure,
+[class*="__discordVisuals"]::before,
+[class*="__discordVisuals"]::after {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid #d8d3c8;
+  background-color: #fff;
+  box-shadow: 0 10px 28px rgba(23,35,58,.05);
+  overflow: hidden;
+}
+
+[class*="__discordVisuals"] > figure img {
+  display: block;
+  width: 100% !important;
+  height: 260px !important;
+  object-fit: contain !important;
+  background: #f5f6f8;
+}
+
+[class*="__discordVisuals"] > figure figcaption {
+  min-height: 76px;
+  padding: 11px 13px 13px !important;
+  border-top: 1px solid #e4dfd5;
+  background: #fff;
+  font-size: 0 !important;
+  color: #17233a !important;
+}
+
+[class*="__discordVisuals"] > figure figcaption::before,
+[class*="__discordVisuals"] > figure figcaption::after {
+  display: block;
+}
+
+[class*="__discordVisuals"] > figure figcaption::before {
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: #315d96;
+}
+
+[class*="__discordVisuals"] > figure figcaption::after {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #17233a;
+}
+
+[class*="__discordVisuals"] > figure:nth-child(1) figcaption::before { content: "01 / 整理する"; }
+[class*="__discordVisuals"] > figure:nth-child(1) figcaption::after { content: "行事・用途ごとにチャンネルを分け、情報の置き場所を決めた"; }
+[class*="__discordVisuals"] > figure:nth-child(2) figcaption::before { content: "02 / 残す"; }
+[class*="__discordVisuals"] > figure:nth-child(2) figcaption::after { content: "案件ごとに相談・資料をフォーラムへ残し、後から探せるようにした"; }
+
+[class*="__discordVisuals"]::before,
+[class*="__discordVisuals"]::after {
+  box-sizing: border-box;
+  display: block;
+  padding: 262px 13px 13px;
+  white-space: pre-line;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #17233a;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 248px;
+}
+
+[class*="__discordVisuals"]::before {
+  content: "03 / 知らせる\A 活動日Botで、当日の予定や開始時間を通知";
+  background-image: url('/evidence/discord-bot-proof.svg');
+}
+
+[class*="__discordVisuals"]::after {
+  content: "04 / 分ける\A ロールを付与し、役割ごとに閲覧・運用範囲を分けた";
+  background-image: url('/evidence/discord-role-proof.svg');
+  background-size: contain;
+  background-color: #fff;
+}
+
+[class*="__discordVisuals"]::selection { background: transparent; }
+
+[class*="__discordVisuals"]::before,
+[class*="__discordVisuals"]::after {
+  border-bottom: 3px solid #17233a;
+}
+
+[class*="__discordVisuals"]::before {
+  border-bottom-color: #315d96;
+}
+
+[class*="__discordVisuals"]::after {
+  border-bottom-color: #c13d76;
+}
+
+[class*="__discordVisuals"]::first-line {
+  font-weight: 700;
+  color: #315d96;
+}
+
+[class*="__discord"] > [class*="__workCopy"]::after {
+  content: "誰の何を変えたか\A \A 生徒会メンバー　過去の連絡や資料を後から検索しやすくした\A 運営ボランティア　必要な範囲だけ参加できるようにした";
+  display: block;
+  margin-top: 28px;
+  padding: 20px 0 2px;
+  border-top: 1px solid #17233a;
+  white-space: pre-line;
+  font-size: 13px;
+  line-height: 1.85;
+  color: #17233a;
+}
+
+@media (max-width: 980px) {
+  [class*="__discord"] { grid-template-columns: 1fr; gap: 34px; }
+  [class*="__discordVisuals"] { grid-template-columns: 1fr 1fr !important; }
+}
+
+@media (max-width: 620px) {
+  [class*="__discord"] > [class*="__workCopy"] h3::after { font-size: 13px; }
+  [class*="__discordVisuals"] { grid-template-columns: 1fr !important; padding-top: 34px !important; }
+  [class*="__discordVisuals"] > figure img { height: auto !important; max-height: 390px; }
+  [class*="__discordVisuals"]::before,
+  [class*="__discordVisuals"]::after { padding-top: 250px; background-size: 100% 236px; }
+  [class*="__discord"] > [class*="__workCopy"]::after { font-size: 12px; line-height: 1.8; }
+}
