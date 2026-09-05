@@ -1,14 +1,14 @@
-/* V3 portal case study. Scoped to the portal article so nested CSS-module classes such as portalFlow and portalAdmin do not receive article-level pseudo-elements. */
+/* V3 portal case study. Scoped to CSS-module class name fragments so it can style the current V3 markup without changing the component structure. */
 [class*="__works"] > [class*="__sectionTitle"] h2 {
   font-size: clamp(40px, 4.2vw, 58px);
 }
 
-article[class*="__portal"] {
+[class*="__portal"] {
   position: relative;
   row-gap: 38px;
 }
 
-article[class*="__portal"] [class*="__workCopy"] h3::after {
+[class*="__portal"] > [class*="__workCopy"] h3::after {
   content: "53団体の提出を、一つの流れで追えるようにした。";
   display: block;
   max-width: 520px;
@@ -21,7 +21,7 @@ article[class*="__portal"] [class*="__workCopy"] h3::after {
   color: #315d96;
 }
 
-article[class*="__portal"] .v3-work-result {
+[class*="__portal"] .v3-work-result {
   margin-top: 24px !important;
   padding: 18px 20px 20px;
   border-top: 1px solid #17233a;
@@ -31,7 +31,7 @@ article[class*="__portal"] .v3-work-result {
   line-height: 1.85 !important;
 }
 
-article[class*="__portal"] .v3-work-result::before {
+[class*="__portal"] .v3-work-result::before {
   content: "ここがポイント";
   display: block;
   margin-bottom: 8px;
@@ -122,12 +122,13 @@ article[class*="__portal"] .v3-work-result::before {
   transform: translateY(-10px);
 }
 
-article[class*="__portal"]::after {
+/* Keep the impact summary inside the left copy column instead of creating a new grid row.
+   This prevents the tall admin screenshot from leaving a large empty band below the case study. */
+[class*="__portal"] > [class*="__workCopy"]::after {
   content: "誰の何を変えたか\A\A提出者　　5種類の書類を一つのポータルから提出できるようにした\A文化祭運営　53団体の未提出・差し戻し・再提出を同じ管理画面で追えるようにした";
-  grid-column: 1 / -1;
   display: block;
-  margin-top: 6px;
-  padding: 22px 0 4px;
+  margin-top: 30px;
+  padding: 20px 0 2px;
   border-top: 1px solid #17233a;
   white-space: pre-line;
   font-size: 13px;
@@ -137,12 +138,12 @@ article[class*="__portal"]::after {
 
 @media (max-width: 980px) {
   [class*="__portalFlow"] figure:not(:last-child)::after { right: -13px; }
-  article[class*="__portal"]::after { margin-top: 2px; }
+  [class*="__portal"] > [class*="__workCopy"]::after { margin-top: 26px; }
 }
 
 @media (max-width: 620px) {
   [class*="__works"] > [class*="__sectionTitle"] h2 { font-size: 36px; }
-  article[class*="__portal"] [class*="__workCopy"] h3::after { font-size: 13px; }
+  [class*="__portal"] > [class*="__workCopy"] h3::after { font-size: 13px; }
   [class*="__portalFlow"] { padding-top: 36px; }
   [class*="__portalFlow"] figure { margin-bottom: 8px; }
   [class*="__portalFlow"] figure:not(:last-child)::after {
@@ -155,7 +156,8 @@ article[class*="__portal"]::after {
   }
   [class*="__portalFlow"] [class*="__portalAdmin"] { transform: none; }
   [class*="__portalFlow"] figcaption { min-height: 0; }
-  article[class*="__portal"]::after {
+  [class*="__portal"] > [class*="__workCopy"]::after {
+    margin-top: 22px;
     font-size: 12px;
     line-height: 1.8;
     padding-top: 18px;
