@@ -58,7 +58,7 @@
 }
 
 [class*="__festival"] > [class*="__workCopy"] [class*="__workData"]::before {
-  content: "来場者の使い方\A\A01 / 探す\A企画検索・カテゴリー絞り込みで、行きたい企画を探す\A\A02 / 場所\A構内図で、企画の場所を確認する\A\A03 / 時間\Aタイムライン・お知らせで、開催時間や当日の変更を確認する";
+  content: "来場者の使い方\A \A 01 / 探す\A 企画検索・カテゴリー絞り込みで、行きたい企画を探す\A \A 02 / 場所\A 構内図で、企画の場所を確認する\A \A 03 / 時間\A タイムライン・お知らせで、開催時間や当日の変更を確認する";
   display: block;
   white-space: pre-wrap;
   font-size: 12px;
@@ -67,7 +67,7 @@
 }
 
 [class*="__festival"] > [class*="__workCopy"] [class*="__workData"]::after {
-  content: "利用結果\A\A1,091人\A本番2日間（7/17–18）のGA4アクティブユーザー\A\A17,294表示\Aトップページ（7/6–19）\A\A857表示\A構内図（7/6–19）";
+  content: "利用結果\A \A 1,091人\A 本番2日間（7/17–18）のGA4アクティブユーザー\A \A 17,294表示\A トップページ（7/6–19）\A \A 857表示\A 構内図（7/6–19）";
   display: block;
   margin-top: 22px;
   padding-top: 18px;
@@ -96,7 +96,7 @@
 }
 
 [class*="__festival"] > [class*="__workCopy"]::after {
-  content: "誰の何を変えたか\A\A来場者\A企画・場所・時間を、一つのWebサイトで確認できるようにした\A\A文化祭運営\A当日の変更や案内をWeb上で更新し、来場者へ反映できるようにした";
+  content: "誰の何を変えたか\A \A 来場者\A 企画・場所・時間を、一つのWebサイトで確認できるようにした\A \A 文化祭運営\A 当日の変更や案内をWeb上で更新し、来場者へ反映できるようにした";
   display: block;
   margin-top: 30px;
   padding: 20px 0 2px;
