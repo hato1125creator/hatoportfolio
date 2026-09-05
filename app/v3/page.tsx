@@ -22,7 +22,7 @@ export default function PortfolioV3() {
           <p className={styles.kicker}>高校での制作と実践</p>
           <h1>情報は、<br />置くだけでは<br /><em>届かない。</em></h1>
           <p className={styles.lead}>情報が届き、理解され、行動につながるところまでを考えてきた。</p>
-          <p className={styles.intro}>生徒会活動の中で、受付、提出、情報発信、連絡がうまくつながらず、人が迷ったり止まったりする場面を見た。そこで、画面だけでなくルールや運用まで含めて仕組みを作った。</p>
+          <p className={styles.intro}>生徒会長として、文化祭の入場、提出、情報発信、内部連絡の4領域を作り直してきた。共通していたのは、情報が「ある」のに必要な人へ届かず、行動が止まることだった。そこで、画面だけでなくルールや運用まで含めて仕組みにした。</p>
           <div className={styles.identity}><span>千葉英和高等学校 3年</span><b>越川 颯人</b></div>
         </div>
         <div className={styles.heroMedia}>
@@ -178,6 +178,8 @@ export default function PortfolioV3() {
           <div className={styles.discordVisuals}>
             <figure className={styles.discordMain}><img src="/evidence/discord-channel-structure.png" alt="Discordのチャンネル構成" /><figcaption>チャンネル構成</figcaption></figure>
             <figure className={styles.discordSub}><img src="/evidence/discord-project-forum.png" alt="Discordのフォーラム" /><figcaption>フォーラム運用</figcaption></figure>
+            <figure><img src="/evidence/discord-bot-proof.webp" alt="活動日Botが当日の予定と開始時刻を通知している画面" /><figcaption>活動日Botによる予定通知</figcaption></figure>
+            <figure><img src="/evidence/discord-role-proof.webp" alt="管理者・生徒会執行部・運営ロールの付与画面" /><figcaption>役割ごとのロール設計</figcaption></figure>
           </div>
         </article>
       </section>
@@ -204,23 +206,23 @@ export default function PortfolioV3() {
           <div><b>確かめる</b><p>到達、閲覧、理解、意見提出までをデータで見る。</p></div>
           <div><b>作って検証する</b><p>調査結果を情報サービスとして試作し、使われ方を確かめる。</p></div>
         </div>
-        <div className={styles.researchQuestion}><span>特に関心のあるゼミ</span><p><b>新井庭子ゼミ ─ 情報の可視化と調査</b><br /><small>テキストマイニングやデータの可視化を通して、住民の意見や情報への接触状況を分析し、「誰に何が届いていないのか」を確かめ、その結果を情報設計へ戻す方法を学びたい。</small></p></div>
+        <div className={styles.researchQuestion}><span>特に関心のあるゼミ</span><p><b>新井庭子ゼミ ─ 情報の可視化と調査で社会を理解する</b><br /><small>テキストマイニングやデータの可視化、プレゼンテーションを学び、自分の研究では行政情報への接触や意見をデータとして捉え、「誰に何が届いていないのか」を確かめる方法につなげたい。</small></p></div>
         <a className={styles.musashiLink} href="https://www.musashi.ac.jp/faculty/sociology/social_design/seminar_list.html" target="_blank" rel="noreferrer">2027年度 情報社会デザイン専攻 ゼミ一覧 ↗</a>
         <p className={styles.future}>卒業後は、民間企業の立場から、行政と住民をつなぐ情報サービスや情報基盤の設計・開発に携わりたい。</p>
         <a className={styles.musashiLink} href="https://www.musashi.ac.jp/faculty/sociology/social_design/curriculum.html" target="_blank" rel="noreferrer">情報社会デザイン専攻の学び ↗</a>
       </section>
 
       <section className={styles.credits} id="credits">
-        <div className={styles.creditsHead}><p className={styles.kicker}>制作体制・AI利用</p><h2>AIを使った部分も、本人が判断した部分も明記する。</h2></div>
+        <div className={styles.creditsHead}><p className={styles.kicker}>制作体制・生成AI利用</p><h2>生成AIを、どの工程でどう使ったかを明記する。</h2></div>
         <div className={styles.creditGrid}>
-          <div><b>今回のポートフォリオ</b><p>文章・構成・デザイン方針は本人が主導。ChatGPTを内容整理・文章確認・レイアウト検討に、Codexを主にコード生成・修正に使用した。最終文章、事実確認、採用判断、調整は本人が行った。</p></div>
+          <div><b>今回のポートフォリオ</b><p>課題設定、掲載内容の選択、事実確認、最終文章、デザイン方針、採用判断は本人が行った。ChatGPTは内容整理・文章確認・レイアウト検討、Codexは主にコード生成・修正に使用した。</p></div>
           <div><b>各制作物でのAI支援</b><p>QR入場管理はChatGPT・Claude Codeをコード生成・修正などに使用。提出ポータルはGeminiで構成案を作り、ChatGPT・Claude Codeを実装に使用。特設WebサイトはCodexで構成案を検討し、ChatGPT Image 2でトップページの完成デザイン案を生成した。Discordでも生成AIを補助に使用した。</p></div>
           <div><b>共同運用・素材</b><p>QR入場管理のセキュリティや学校運用に関わる仕様は、顧問・関係教員と話し合いながら決定。受付や安全管理は生徒会・実行委員・教員と共同で運用した。特設Webサイトのモチーフイラストは別の生徒が制作した。</p></div>
         </div>
       </section>
 
       <footer className={styles.footer}>
-        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作：2026年8月上旬〜9月4日</span></div>
+        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作・更新：2026年8月上旬〜9月5日</span></div>
         <div><a href="#top">ページ上部へ ↑</a></div>
       </footer>
     </main>
