@@ -84,6 +84,23 @@
   background: #f5f6f8;
 }
 
+[class*="__discordVisuals"] > figure:nth-child(3) {
+  position: relative;
+}
+
+[class*="__discordVisuals"] > figure:nth-child(3) img {
+  opacity: 0;
+}
+
+[class*="__discordVisuals"] > figure:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 260px;
+  background: #f5f6f8 url('/evidence/discord-bot-proof.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+
 [class*="__discordVisuals"] > figure figcaption {
   min-height: 76px;
   padding: 11px 13px 13px !important;
@@ -142,5 +159,7 @@
   [class*="__discord"] > [class*="__workCopy"] h3::after { font-size: 13px; }
   [class*="__discordVisuals"] { grid-template-columns: 1fr !important; padding-top: 34px !important; }
   [class*="__discordVisuals"] > figure img { height: auto !important; max-height: 390px; }
+  [class*="__discordVisuals"] > figure:nth-child(3) img { height: 260px !important; }
+  [class*="__discordVisuals"] > figure:nth-child(3)::before { height: 260px; }
   [class*="__discord"] > [class*="__workCopy"]::after { font-size: 12px; line-height: 1.8; }
 }
