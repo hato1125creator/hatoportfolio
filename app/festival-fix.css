@@ -1,0 +1,125 @@
+/* V3 festival website case study — editorial treatment without changing the component markup. */
+[class*="__festival"] {
+  grid-template-columns: 1.08fr .92fr;
+  gap: 62px;
+}
+
+[class*="__festival"] > [class*="__workCopy"] h3::after {
+  content: "企画・場所・時間を、一つのサイトから探せるようにした。";
+  display: block;
+  max-width: 560px;
+  margin-top: 13px;
+  font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0;
+  color: #315d96;
+}
+
+[class*="__festivalVisual"] {
+  position: sticky;
+  top: 94px;
+}
+
+[class*="__festivalVisual"]::after {
+  content: "実際のサイト — 画面内をスクロールして操作できます";
+  display: block;
+  padding: 10px 14px 12px;
+  border-top: 1px solid #e4dfd5;
+  background: #fff;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #5f6876;
+}
+
+[class*="__festival"] > [class*="__workCopy"] > p:first-of-type {
+  margin-top: 24px;
+  padding: 18px 0 0;
+  border-top: 1px solid #17233a;
+}
+
+[class*="__festival"] > [class*="__workCopy"] > p:first-of-type::before {
+  content: "主な機能";
+  display: block;
+  margin-bottom: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  color: #315d96;
+}
+
+[class*="__festival"] > [class*="__workCopy"] [class*="__workData"] {
+  margin: 24px 0 0 !important;
+  padding: 20px 0 2px;
+  border-top: 1px solid #d8d3c8;
+  font-size: 0 !important;
+  font-weight: 400 !important;
+}
+
+[class*="__festival"] > [class*="__workCopy"] [class*="__workData"]::before {
+  content: "来場者の使い方\A\A01 / 探す　　企画検索・カテゴリー絞り込みで、行きたい企画を探す\A02 / 場所　　構内図で、企画の場所を確認する\A03 / 時間　　タイムライン・お知らせで、開催時間や当日の変更を確認する";
+  display: block;
+  white-space: pre-line;
+  font-size: 12px;
+  line-height: 1.9;
+  color: #17233a;
+}
+
+[class*="__festival"] > [class*="__workCopy"] [class*="__workData"]::after {
+  content: "利用結果\A\A1,091人　　本番2日間（7/17–18）のGA4アクティブユーザー\A17,294表示　トップページ（7/6–19）\A857表示　　 構内図（7/6–19）";
+  display: block;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #d8d3c8;
+  white-space: pre-line;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.9;
+  color: #17233a;
+}
+
+[class*="__festival"] > [class*="__workCopy"] .v3-work-issue {
+  margin-top: 24px;
+  padding: 16px 18px;
+  background: rgba(255,255,255,.42);
+  border-left: 2px solid #315d96;
+}
+
+[class*="__festival"] > [class*="__workCopy"] [class*="__note"] {
+  margin-top: 22px !important;
+  padding-top: 16px;
+  border-top: 1px solid #d8d3c8;
+  font-size: 11px !important;
+  line-height: 1.8 !important;
+  color: #777e88 !important;
+}
+
+[class*="__festival"] > [class*="__workCopy"]::after {
+  content: "誰の何を変えたか\A\A来場者　　　企画・場所・時間を、一つのWebサイトで確認できるようにした\A文化祭運営　当日の変更や案内をWeb上で更新し、来場者へ反映できるようにした";
+  display: block;
+  margin-top: 30px;
+  padding: 20px 0 2px;
+  border-top: 1px solid #17233a;
+  white-space: pre-line;
+  font-size: 13px;
+  line-height: 1.85;
+  color: #17233a;
+}
+
+@media (max-width: 980px) {
+  [class*="__festival"] { grid-template-columns: 1fr; gap: 34px; }
+  [class*="__festivalVisual"] { position: static; }
+  [class*="__festival"] > [class*="__workCopy"]::after { margin-top: 26px; }
+}
+
+@media (max-width: 620px) {
+  [class*="__festival"] > [class*="__workCopy"] h3::after { font-size: 13px; }
+  [class*="__festival"] > [class*="__workCopy"] [class*="__workData"]::before,
+  [class*="__festival"] > [class*="__workCopy"] [class*="__workData"]::after,
+  [class*="__festival"] > [class*="__workCopy"]::after {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  [class*="__festivalVisual"]::after { font-size: 10px; }
+}
