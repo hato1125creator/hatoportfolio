@@ -195,7 +195,7 @@ export default function PortfolioV3() {
             <p className="v3-work-result">過去の連絡を検索し、行事ごとに資料・担当・相談を整理できるようになった。権限ごとに閲覧範囲を分けたことで、生徒会以外の運営ボランティアも必要な範囲だけ参加できるようにした。</p>
             <p className="v3-work-note">※44人は継続運用した規模を示す人数。連絡の見落とし件数が導入前後でどの程度変化したかは、数値で比較していない。</p>
             <p className="v3-work-issue"><b>残った課題：</b>分類を増やすほど投稿先が分かりにくくなる。チャンネル整理と次年度への引き継ぎを継続して改善する必要がある。</p>
-            <p className={styles.workTech}>Discord / 権限設計 / Bot運用（活動日程・予定通知）</p>
+            <p className={styles.workTech}>Discord / Google Calendar / Google Apps Script / 権限設計 / Bot運用（活動日程・予定通知）</p>
           </div>
           <div className={styles.discordVisuals}>
             <figure className={styles.discordMain}><img src="/evidence/discord-channel-structure.png" alt="Discordのチャンネル構成" /><figcaption>チャンネル構成</figcaption></figure>
@@ -238,7 +238,7 @@ export default function PortfolioV3() {
         <div className={styles.creditsHead}><p className={styles.kicker}>制作体制・生成AI利用</p><h2>生成AIを、どの工程でどう使ったかを明記する。</h2></div>
         <div className={styles.creditGrid}>
           <div><b>今回のポートフォリオ</b><p>課題設定、掲載内容の選択、事実確認、最終文章、デザイン方針、採用判断は本人が行った。ChatGPTは内容整理・文章確認・レイアウト検討、Codexは主にコード生成・修正に使用した。</p></div>
-          <div><b>各制作物でのAI支援</b><p>QR入場管理はChatGPT・Claude Codeをコード生成・修正などに使用。提出ポータルはGeminiで構成案を作り、ChatGPT・Claude Codeを実装に使用。特設WebサイトはCodexで構成案を検討し、ChatGPT Image 2でトップページの完成デザイン案を生成した。Discordでも生成AIを補助に使用した。</p></div>
+          <div><b>各制作物でのAI支援</b><p>QR入場管理はChatGPT・Claude Codeをコード生成・修正などに使用。提出ポータルはGeminiで構成案を作り、ChatGPT・Claude Codeを実装に使用。特設WebサイトはCodexで構成案を検討し、ChatGPT Image 2でトップページの完成デザイン案を生成した。Discordの活動日Botでは、Google CalendarとGoogle Apps Scriptを使った予定通知の実装を検討・作成する際にGeminiを使用した。</p></div>
           <div><b>本人の担当と共同運用</b><p>QR入場管理の課題整理・要件決定・UI・DB設計・実装・教員調整は本人が担当し、受付や安全管理は生徒会・実行委員・教員と共同で運用した。提出ポータルは要件整理・画面と処理の設計・実装を本人が行い、各団体と文化祭運営が実際の提出・確認に使用した。Discordはチャンネル構成・権限設計・Bot運用の設計と導入判断を本人が行い、日常運用は生徒会メンバー・運営ボランティアと共同。特設Webサイトのモチーフイラストは別の生徒が制作した。</p></div>
         </div>
       </section>
