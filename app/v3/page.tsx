@@ -1,5 +1,6 @@
 import styles from "./v3.module.css";
 import "./final.css";
+import "./discord-fix.css";
 
 export default function PortfolioV3() {
   return (
@@ -178,7 +179,7 @@ export default function PortfolioV3() {
           <div className={styles.discordVisuals}>
             <figure className={styles.discordMain}><img src="/evidence/discord-channel-structure.png" alt="Discordのチャンネル構成" /><figcaption>チャンネル構成</figcaption></figure>
             <figure className={styles.discordSub}><img src="/evidence/discord-project-forum.png" alt="Discordのフォーラム" /><figcaption>フォーラム運用</figcaption></figure>
-            <figure><img src="/evidence/discord-bot-proof.webp" alt="活動日Botが当日の予定と開始時刻を通知している画面" /><figcaption>活動日Botによる予定通知</figcaption></figure>
+            <figure><img src="/evidence/discord-bot-proof.svg" alt="活動日Botが当日の予定と開始時刻を通知している画面" /><figcaption>活動日Botによる予定通知</figcaption></figure>
             <figure><img src="/evidence/discord-role-proof.webp" alt="管理者・生徒会執行部・運営ロールの付与画面" /><figcaption>役割ごとのロール設計</figcaption></figure>
           </div>
         </article>
@@ -206,7 +207,7 @@ export default function PortfolioV3() {
           <div><b>確かめる</b><p>到達、閲覧、理解、意見提出までをデータで見る。</p></div>
           <div><b>作って検証する</b><p>調査結果を情報サービスとして試作し、使われ方を確かめる。</p></div>
         </div>
-        <div className={styles.researchQuestion}><span>特に関心のあるゼミ</span><p><b>新井庭子ゼミ ─ 情報の可視化と調査で社会を理解する</b><br /><small>テキストマイニングやデータの可視化、プレゼンテーションを学び、自分の研究では行政情報への接触や意見をデータとして捉え、「誰に何が届いていないのか」を確かめる方法につなげたい。</small></p></div>
+        <div className={styles.researchQuestion}><span>特に関心のあるゼミ</span><p><b>新井庭子ゼミ ─ 情報の可視化と調査で社会を理解する・分析と発信の仕方を学ぶ</b><br /><small>テキストマイニングやデータの可視化、プレゼンテーションを学び、自分の研究では行政情報への接触や意見をデータとして捉え、「誰に何が届いていないのか」を確かめる方法につなげたい。</small></p></div>
         <a className={styles.musashiLink} href="https://www.musashi.ac.jp/faculty/sociology/social_design/seminar_list.html" target="_blank" rel="noreferrer">2027年度 情報社会デザイン専攻 ゼミ一覧 ↗</a>
         <p className={styles.future}>卒業後は、民間企業の立場から、行政と住民をつなぐ情報サービスや情報基盤の設計・開発に携わりたい。</p>
         <a className={styles.musashiLink} href="https://www.musashi.ac.jp/faculty/sociology/social_design/curriculum.html" target="_blank" rel="noreferrer">情報社会デザイン専攻の学び ↗</a>
@@ -222,7 +223,7 @@ export default function PortfolioV3() {
       </section>
 
       <footer className={styles.footer}>
-        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作・更新：2026年8月上旬〜9月5日</span></div>
+        <div><b>越川颯人</b><span>千葉英和高等学校 / 2026　制作・更新：2026年8月上旬〜9月6日</span></div>
         <div><a href="#top">ページ上部へ ↑</a></div>
       </footer>
     </main>
