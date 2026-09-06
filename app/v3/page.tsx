@@ -15,6 +15,7 @@ export default function PortfolioV3() {
           <a href="#works">制作物</a>
           <a href="#question">残った問い</a>
           <a href="#musashi">武蔵大学で</a>
+          <a href="#credits">AI・制作体制</a>
         </nav>
       </header>
 
@@ -24,22 +25,38 @@ export default function PortfolioV3() {
           <h1>情報は、<br />置くだけでは<br /><em>届かない。</em></h1>
           <p className={styles.lead}>情報が届き、理解され、行動につながるところまでを考えてきた。</p>
           <p className={styles.intro}>生徒会長として、文化祭の入場、提出、情報発信、内部連絡の4領域を作り直してきた。共通していたのは、情報が「ある」のに必要な人へ届かず、行動が止まることだった。そこで、画面だけでなくルールや運用まで含めて仕組みにした。</p>
+          <p className="v3-hero-question"><b>大学で確かめたい問い</b>行政情報を普段見ない人にも必要な情報が届き、背景を理解した上で意見を表明できる仕組みは、どう設計できるか。</p>
           <div className={styles.identity}><span>千葉英和高等学校 3年</span><b>越川 颯人</b></div>
         </div>
         <div className={styles.heroMedia}>
           <figure className={styles.heroMain}><img src="/evidence/qr-reception-field.jpg" alt="梨花祭当日のQR入場受付" /><figcaption>梨花祭当日のQR入場受付</figcaption></figure>
-          <div className={styles.heroSide}>
+          <div className={`v3-hero-side ${styles.heroSide}`}>
             <figure><img src="/evidence/qr-admin-dashboard.jpg" alt="QR入場管理の管理画面" /><figcaption>当日の管理画面</figcaption></figure>
             <figure><img src="/evidence/qr-student-dashboard-login.webp" alt="生徒向けログイン画面" /><figcaption>生徒向けログイン</figcaption></figure>
           </div>
         </div>
       </section>
 
+      <nav className="v3-quick-nav" aria-label="作品目次">
+        <span>作品目次</span>
+        <a href="#qr">QR入場管理</a>
+        <a href="#portal">提出ポータル</a>
+        <a href="#festival">特設Web</a>
+        <a href="#discord">Discord</a>
+        <a href="#question">残った問い</a>
+        <a href="#credits">AI・制作体制</a>
+      </nav>
+
       <section className={styles.qr} id="qr">
         <div className={styles.sectionTitle}>
           <p className={styles.kicker}>代表作品</p>
           <h2>QR入場管理</h2>
           <p>紙の招待券と名簿照合で発生していた長い列を、招待から受付・集計まで一つの流れとして作り直した。</p>
+        </div>
+
+        <div className="v3-qr-summary">
+          <p><b>結果</b>本番中にシステム停止による紙受付への切り替えはなく、一般招待QRで1,043人の入場を記録した。</p>
+          <p><b>検証上の限界</b>待ち時間は定量的に計測していない。列の変化は当日の受付運用中の観察であり、入場記録のない379件についても理由までは区別できていない。</p>
         </div>
 
         <div className={styles.storyGrid}>
@@ -112,7 +129,7 @@ export default function PortfolioV3() {
 
         <div className="qr-impact">
           <div className="qr-impact-head"><span>結果として</span><h3>4者の行動を、一つの流れにした。</h3></div>
-          <div className="qr-impact-row"><b>来場者</b><p><span>困っていたこと</span>受付で長く待ち、見たい発表に間に合わないことがあった</p><i>→</i><p><span>変えたこと</span>QRを提示する受付へ。受付開始後は前年のような長い待機列がほぼ発生しなかった</p></div>
+          <div className="qr-impact-row"><b>来場者</b><p><span>困っていたこと</span>受付で長く待ち、見たい発表に間に合わないことがあった</p><i>→</i><p><span>変えたこと</span>QRを提示する受付へ。当日の運用観察では、受付開始後に前年のような長い待機列はほぼ発生しなかった</p></div>
           <div className="qr-impact-row"><b>生徒</b><p><span>困っていたこと</span>紙の招待券を受け取り、相手に直接渡す必要があった</p><i>→</i><p><span>変えたこと</span>招待者名を登録し、LINEなどで固有リンクを送れるようにした</p></div>
           <div className="qr-impact-row"><b>受付スタッフ</b><p><span>困っていたこと</span>紙の名簿から招待者を探して照合していた</p><i>→</i><p><span>変えたこと</span>QRで照合と入場記録を行い、例外時だけ検索・手動確認する流れにした</p></div>
           <div className="qr-impact-row"><b>学校・運営</b><p><span>困っていたこと</span>入場状況をその場で把握しにくかった</p><i>→</i><p><span>変えたこと</span>複数端末の記録を同じDBへ集め、人数や時間帯別状況を確認できるようにした</p></div>
@@ -123,8 +140,9 @@ export default function PortfolioV3() {
           <div><span>一般招待QR入場</span><strong>1,043</strong><small>人</small></div>
           <div><span>登録生徒</span><strong>991</strong><small>人 / 対象1,119人</small></div>
         </div>
-        <p className="v3-result-line"><b>結果：</b>受付開始前には開始を待つ列ができたが、受付を始めると流れ、前年のような長い受付待ちの列はほぼ発生しなかった。本番中にシステム停止による紙受付への切り替えはなく、一般招待QRで1,043人の入場を記録した。</p>
-        <p className="v3-issue-line"><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない人やQRを読み取れない人はいた。また、最終的に招待者名が登録されていた1,422件のうち379件は入場記録がなく、その理由までは区別できていない。</p>
+        <p className="v3-evidence-note">数値は2026年7月17・18日の本番システム記録に基づく。待ち時間そのものは計測していないため、列の変化は当日の受付運用中の観察として記載している。</p>
+        <p className="v3-result-line"><b>結果：</b>受付開始前には開始を待つ列ができたが、受付を始めると流れた。本番中にシステム停止による紙受付への切り替えはなく、一般招待QRで1,043人の入場を記録した。</p>
+        <p className="v3-issue-line"><b>残った課題：</b>説明動画を公開していても、当日にQRの表示方法が分からない人やQRを読み取れない人はいた。説明を見なかったのか、見ても理解できなかったのかは区別できていない。また、最終的に招待者名が登録されていた1,422件のうち379件は入場記録がなく、その理由までは分かっていない。</p>
         <p className={styles.metaLine}>制作・運用：2025.03–2026.07　／　担当：課題発見・企画・教員との調整・要件決定・UI設計・AIを用いた実装・DB設計・実証テスト・当日運用</p>
         <p className={styles.metaLine}>技術：HTML / CSS / JavaScript / Node.js / Express / PostgreSQL（Supabase） / html5-qrcode / Nodemailer（Gmail SMTP） / Vercel</p>
       </section>
@@ -132,13 +150,13 @@ export default function PortfolioV3() {
       <section className={styles.works} id="works">
         <div className={styles.sectionTitle}><p className={styles.kicker}>ほかの制作</p><h2>課題に合わせて、仕組みを変えた。</h2></div>
 
-        <article className={styles.portal}>
+        <article className={styles.portal} id="portal">
           <div className={styles.workCopy}>
             <span>提出管理</span>
             <h3>梨花祭 統合管理ポータル</h3>
             <p>32クラスと22部活動を対象に、書類の提出・確認・差し戻し・再提出を一つの場所で追えるようにした。1団体が別団体と合併したため、実運用上の提出単位は53団体となった。</p>
             <p className={styles.workData}>対象54団体（実運用53団体） / 5種類の書類 / 約3.5か月運用</p>
-            <p className="v3-work-result">実運用上の53団体すべてが少なくとも1回はポータル経由で提出した。5種類の書類のうち企画書は全団体必須とし、提出ファイルはGoogle Driveへ自動保存。未提出団体の把握、催促文の作成、差し戻し・再提出の確認を同じ流れで行えるようにした。</p>
+            <p className="v3-work-result">実運用上の53団体すべてが少なくとも1回はポータル経由で提出した。5種類の書類のうち企画書は全団体必須とし、提出ファイルはGoogle Driveへ自動保存。未提出団体の把握、催促文の作成、差し戻し・再提出の確認を同じ流れで行えるようにした。ただし、この53団体という数字だけでは、全書類が期限内に提出されたことや、全利用者が迷わず使えたことまでは示せない。</p>
             <p className="v3-work-issue"><b>残った課題：</b>説明PDFや動画を用意しても、提出方法やファイル添付で迷う利用者がいた。案内を増やすだけでなく、画面自体をさらに単純にする必要がある。</p>
             <p className={styles.workTech}>Google Apps Script / Google スプレッドシート / Google Drive</p>
           </div>
@@ -147,32 +165,35 @@ export default function PortfolioV3() {
             <figure><img src="/evidence/portal-form.jpeg" alt="書類提出画面" /><figcaption>提出</figcaption></figure>
             <figure className={styles.portalAdmin}><img src="/evidence/portal-admin.jpeg" alt="提出状況の管理画面" /><figcaption>審査・進捗</figcaption></figure>
           </div>
+          <p className="v3-work-note">※管理画面の数値は撮影時点のスナップショット。53団体は約3.5か月の運用期間を通して、少なくとも1回ポータル経由で提出した団体数。</p>
         </article>
 
-        <article className={styles.festival}>
-          <div className={styles.festivalVisual}>
+        <article className={styles.festival} id="festival">
+          <div className={`v3-festival-visual ${styles.festivalVisual}`}>
             <div className={styles.browserBar}><span></span><span></span><span></span><b>梨花祭2026 特設Webサイト</b></div>
             <iframe src="https://rikasai2026-site-tokusetu.vercel.app/" title="梨花祭2026 特設Webサイト" loading="lazy" />
           </div>
-          <div className={styles.workCopy}>
+          <div className={`v3-festival-copy ${styles.workCopy}`}>
             <span>情報発信</span>
             <h3>梨花祭2026 特設Webサイト</h3>
             <p>検索、カテゴリー絞り込み、構内図、タイムライン、お知らせ、当日の情報更新をWebで実現した。必要な機能とカラーパレットは自分で決めた。</p>
             <p className={styles.workData}>本番（7/17–18）GA4アクティブユーザー1,091人 / トップ（7/6–19）17,294表示 / 構内図（7/6–19）857表示</p>
+            <p className="v3-work-note">※これらは利用規模を示すアクセス指標であり、必要な情報を理解できた人数や実来場者数を示すものではない。</p>
             <p className="v3-work-issue"><b>残った課題：</b>Web化しても、必要な情報に全員が到達したとは限らない。検索や導線のどこで離脱するのかを、利用データと聞き取りから確かめたい。</p>
             <p className={styles.workTech}>Next.js / TypeScript / Prisma / PostgreSQL（Supabase） / Vercel / Vercel Analytics / Google Analytics 4 / Google Tag Manager</p>
-            <p className={styles.note}>「おとぎの国」のモチーフイラストは別の生徒が制作。構成案はCodexで検討し、トップページのみChatGPT Image 2で複数の完成デザイン案を生成して、本人が選択・修正指示した。実装時は実際の写真・素材へ差し替え、トップ以外は完成デザイン画像を生成せずコード上で調整した。</p>
+            <p className={styles.note}>2026年7月の梨花祭で実際に公開・運用した内容を、当時の作品記録として掲載している。「おとぎの国」のモチーフイラストは別の生徒が制作。構成案はCodexで検討し、トップページのみChatGPT Image 2で複数の完成デザイン案を生成して、本人が選択・修正指示した。実装時は実際の写真・素材へ差し替え、トップ以外は完成デザイン画像を生成せずコード上で調整した。</p>
             <a href="https://rikasai2026-site-tokusetu.vercel.app/" target="_blank" rel="noreferrer">実際のサイトを見る ↗</a>
           </div>
         </article>
 
-        <article className={styles.discord}>
+        <article className={styles.discord} id="discord">
           <div className={styles.workCopy}>
             <span>情報共有</span>
             <h3>生徒会 Discord情報基盤</h3>
             <p>LINEでは流れてしまう連絡を、行事、タスク、資料、権限ごとに整理し、後から検索できる情報へ変えた。Slackも検討したが、無料プランの履歴制限などを踏まえてDiscordを選んだ。</p>
             <p>2024年7月ごろから情報共有の改善を始め、2025年4月にDiscordへ移行。生徒会メンバーと運営ボランティアを合わせた44人で継続運用した。</p>
             <p className="v3-work-result">過去の連絡を検索し、行事ごとに資料・担当・相談を整理できるようになった。権限ごとに閲覧範囲を分けたことで、生徒会以外の運営ボランティアも必要な範囲だけ参加できるようにした。</p>
+            <p className="v3-work-note">※44人は継続運用した規模を示す人数。連絡の見落とし件数が導入前後でどの程度変化したかは、数値で比較していない。</p>
             <p className="v3-work-issue"><b>残った課題：</b>分類を増やすほど投稿先が分かりにくくなる。チャンネル整理と次年度への引き継ぎを継続して改善する必要がある。</p>
             <p className={styles.workTech}>Discord / 権限設計 / Bot運用（活動日程・予定通知）</p>
           </div>
@@ -186,16 +207,16 @@ export default function PortfolioV3() {
       </section>
 
       <section className={styles.question} id="question">
-        <div><p className={styles.kicker}>制作を通して残った問い</p><h2>それでも、<br />見ない人は残った。</h2></div>
+        <div><p className={styles.kicker}>制作を通して残った問い</p><h2>それでも、<br />届いたとは言い切れなかった。</h2></div>
         <div className={styles.questionBody}>
-          <p className={styles.questionLead}>仕組みを整え、説明を用意しても、情報を見ない人や、使い方が分からない人はいた。</p>
+          <p className={styles.questionLead}>仕組みを整え、説明を用意しても、使い方が分からない人はいた。説明を見なかったのか、見ても理解できなかったのかは区別できていない。</p>
           <p>QR入場管理では説明動画を公開しても、当日にQRの表示方法が分からない来場者がいた。Web化しても、必要な情報に全員が到達するとは限らない。そこで、自分の経験から「届かない」状態を仮に3段階に整理した。</p>
           <div className={styles.questions}>
             <p><b>見つけられない</b><span>そもそも情報との接点がない。</span></p>
             <p><b>理解できない</b><span>背景知識によって受け取り方が変わる。</span></p>
             <p><b>行動につながらない</b><span>理解しても、参加や利用につながらない。</span></p>
           </div>
-          <p>さらに、八千代市の高校生魅力発信大使として行政の情報発信に関わる中で、この問題は学校の中だけではないのではないかと考えるようになった。学校で見つけた「届かない」という問いを、地域や行政でも確かめたい。</p>
+          <p>さらに、八千代市の高校生魅力発信大使として行政の情報発信に関わる中で、この問題は学校の中だけではないのではないかと考えるようになった。文化祭での参加・利用と行政への意見表明は同じではない。学校で見つけた「届かない」という問いを、地域や行政では別の条件として調査し、確かめたい。</p>
         </div>
       </section>
 
@@ -218,7 +239,7 @@ export default function PortfolioV3() {
         <div className={styles.creditGrid}>
           <div><b>今回のポートフォリオ</b><p>課題設定、掲載内容の選択、事実確認、最終文章、デザイン方針、採用判断は本人が行った。ChatGPTは内容整理・文章確認・レイアウト検討、Codexは主にコード生成・修正に使用した。</p></div>
           <div><b>各制作物でのAI支援</b><p>QR入場管理はChatGPT・Claude Codeをコード生成・修正などに使用。提出ポータルはGeminiで構成案を作り、ChatGPT・Claude Codeを実装に使用。特設WebサイトはCodexで構成案を検討し、ChatGPT Image 2でトップページの完成デザイン案を生成した。Discordでも生成AIを補助に使用した。</p></div>
-          <div><b>共同運用・素材</b><p>QR入場管理のセキュリティや学校運用に関わる仕様は、顧問・関係教員と話し合いながら決定。受付や安全管理は生徒会・実行委員・教員と共同で運用した。特設Webサイトのモチーフイラストは別の生徒が制作した。</p></div>
+          <div><b>本人の担当と共同運用</b><p>QR入場管理の課題整理・要件決定・UI・DB設計・実装・教員調整は本人が担当し、受付や安全管理は生徒会・実行委員・教員と共同で運用した。提出ポータルは要件整理・画面と処理の設計・実装を本人が行い、各団体と文化祭運営が実際の提出・確認に使用した。Discordはチャンネル構成・権限設計・Bot運用の設計と導入判断を本人が行い、日常運用は生徒会メンバー・運営ボランティアと共同。特設Webサイトのモチーフイラストは別の生徒が制作した。</p></div>
         </div>
       </section>
 
